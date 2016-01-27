@@ -252,7 +252,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}} SirVer/ultisnips "
 
     
-if has("win16") || has("win32")
+"if has("win16") || has("win32")
 " Valloric/YouCompleteMe {{{1 "
 "Bundle 'Valloric/YouCompleteMe'
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/vim-ycm/ycm_extra_conf.py'
@@ -268,7 +268,7 @@ if has("win16") || has("win32")
 "let g:ycm_complete_in_strings = 1 " Completion in string
 "let g:ycm_enable_diagnostic_signs = 0
 "let g:ycm_enable_diagnostic_highlighting = 0
-endif
+"endif
 " }}} Valloric/YouCompleteMe "
 
 " davidhalter/jedi-vim {{{1 "
@@ -330,7 +330,3 @@ Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
 
-" Shougo/vimshell {{{1 "
-Bundle 'Shougo/vimshell.vim'
-
-" }}} Shougo/vimshell "
