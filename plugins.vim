@@ -330,7 +330,3 @@ Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
 
-" Shougo/vimshell {{{1 "
-Bundle 'Shougo/vimshell.vim'
-
-" }}} Shougo/vimshell "
