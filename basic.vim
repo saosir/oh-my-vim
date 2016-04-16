@@ -32,7 +32,7 @@ set mouse=a
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
+if has("win32")
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 else
     set wildignore+=.git\*,.hg\*,.svn\*
@@ -135,11 +135,6 @@ set nocp
 " Enable syntax highlighting
 syntax enable
 
-
-
-
-
-
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
@@ -151,8 +146,7 @@ if has("gui_running")
             "au GUIEnter * simalt ~x
         catch
         endtry
-    endif
-    if has("gui_gtk2")
+    elseif has("unix")
         set guifont=DejaVu\ Sans\ Mono\ 12
     endif
     set guitablabel=%M\ %t
