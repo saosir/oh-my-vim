@@ -213,6 +213,7 @@ let g:EasyMotion_smartcase = 1
 "map <space> <Plug>(easymotion-bd-w)
 map <leader>w <Plug>(easymotion-bd-w)
 map <leader>s <Plug>(easymotion-s)
+map <space><space> <Plug>(easymotion-s)
 map <leader><leader>s <Plug>(easymotion-s2)
 nmap <leader>f <Plug>(easymotion-f)
 nmap <leader>F <Plug>(easymotion-F)
@@ -301,13 +302,12 @@ let g:jedi#rename_command = "<S-A-r>"
 
 " bling/vim-airline {{{1 "
 
-Bundle 'bling/vim-airline'
-let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
-let g:airline#extensions#quickfix#location_text = 'Location'
+Bundle 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline_powerline_fonts = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -319,7 +319,8 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <TAB> :bn<CR>
 nmap <S-TAB> :bp<CR>
-
+Bundle 'vim-airline/vim-airline-themes'
+let g:airline_theme="wombat"
 " }}} bling/vim-airline "
 
 
@@ -331,4 +332,8 @@ Bundle "terryma/vim-multiple-cursors"
 " terryma/vim-expand-region {{{1 "
 Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
+
+" airblade/vim-gitgutter {{{ "
+Bundle 'airblade/vim-gitgutter'
+" }}} airblade/vim-gitgutter "
 

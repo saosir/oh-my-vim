@@ -41,7 +41,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=1
+"set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -141,12 +141,15 @@ if has("gui_running")
     set guioptions-=m
     if has("win32")
         try
-            set guifont=Source\ Code\ Pro:h12
+            "set guifont=
+            set guifont=DejaVu_Sans_Mono_for_Powerline:h12, Source_Code_Pro:h12, DejaVu_Sans_Mono:h12 
+            "set guifont=Arimo_for_Powerline
+            "set guifont=Ubuntu_Mono_derivative_Powerline
         catch
         endtry
     elseif has("unix")
         try
-            set guifont=Source\ Code\ Pro\ 12
+            set guifont=Source\ Code\ Pro\ 12, Monospace\ 12
         catch
         endtry
     endif
@@ -158,55 +161,59 @@ endif
 
 set columns=120
 set lines=35
-set t_Co=256
+"set t_Co=256
 
 
-"set encoding=utf8
-if has('win32')
-    set encoding=chinese
-    set fileencodings=utf-8,gb2312,gbk,gb18030,big5
-    set fenc=utf-8
-    set langmenu=zh_CN.GBK
-endif
+set encoding=utf-8
+set fileencodings=utf-8,gbk,gb18030,gk2312
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+language messages zh_CN.utf-8
+"if has('win32')
+    "set encoding=chinese
+    "set fileencodings=utf-8,gb2312,gbk,gb18030,big5
+    "set fenc=utf-8
+    "set langmenu=zh_CN.GBK
+"endif
 
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
 
 
 
-function! Source(begin, end)
-    let lines = getline(a:begin, a:end)
-    for line in lines
-        execute line
-    endfor
-endfunction
+"function! Source(begin, end)
+    "let lines = getline(a:begin, a:end)
+    "for line in lines
+        "execute line
+    "endfor
+"endfunction
 
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
+"function! CmdLine(str)
+    "exe "menu Foo.Bar :" . a:str
+    "emenu Foo.Bar
+    "unmenu Foo
+"endfunction
 
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+"function! VisualSelection(direction, extra_filter) range
+    "let l:saved_reg = @"
+    "execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+    "let l:pattern = escape(@", '\\/.*$^~[]')
+    "let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
+    "if a:direction == 'b'
+        "execute "normal ?" . l:pattern . "^M"
+    "elseif a:direction == 'gv'
+        "call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
+    "elseif a:direction == 'replace'
+        "call CmdLine("%s" . '/'. l:pattern . '/')
+    "elseif a:direction == 'f'
+        "execute "normal /" . l:pattern . "^M"
+    "endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+    "let @/ = l:pattern
+    "let @" = l:saved_reg
+"endfunction
 
 
 
@@ -230,28 +237,29 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+map <leader>c :Bclose<cr>
 
 
-function! BufPos_ActivateBuffer(num)
-    let l:count = 1
-    for i in range(1, bufnr("$"))
-        if buflisted(i) && getbufvar(i, "&modifiable")
-            if l:count == a:num
-                exe "buffer " . i
-                return
-            endif
-            let l:count = l:count + 1
-        endif
-    endfor
-    echo "No buffer!"
-endfunction
+"function! BufPos_ActivateBuffer(num)
+    "let l:count = 1
+    "for i in range(1, bufnr("$"))
+        "if buflisted(i) && getbufvar(i, "&modifiable")
+            "if l:count == a:num
+                "exe "buffer " . i
+                "return
+            "endif
+            "let l:count = l:count + 1
+        "endif
+    "endfor
+    "echo "No buffer!"
+"endfunction
 
-function! BufPos_Initialize()
-    for i in range(1, 9)
-        exe "map <M-" . i . "> :call BufPos_ActivateBuffer(" . i . ")<CR>"
-    endfor
-    exe "map <M-0> :call BufPos_ActivateBuffer(10)<CR>"
-endfunction
-autocmd VimEnter * call BufPos_Initialize()
+"function! BufPos_Initialize()
+    "for i in range(1, 9)
+        "exe "map <M-" . i . "> :call BufPos_ActivateBuffer(" . i . ")<CR>"
+    "endfor
+    "exe "map <M-0> :call BufPos_ActivateBuffer(10)<CR>"
+"endfunction
+"autocmd VimEnter * call BufPos_Initialize()
 
 
