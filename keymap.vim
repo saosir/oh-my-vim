@@ -20,7 +20,7 @@ map <C-l> <C-W>l
 
 
 " Close the current buffer
-map <leader>c :bd<cr>
+map <leader>c :bd!<cr>
 " bug:conflit with window move
 "nmap <leader>w :w!<cr>
 

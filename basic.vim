@@ -1,7 +1,6 @@
 
 
 " Sets how many lines of history VIM has to remember
-let g:cache_dir = '~/.vim/.cache'
 set history=700
 set nu
 
@@ -174,9 +173,6 @@ highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
 
 
-function! g:get_cache_dir(suffix)
-    return resolve(expand(g:cache_dir . '/' . a:suffix))
-endfunction
 
 function! Source(begin, end)
     let lines = getline(a:begin, a:end)
