@@ -143,7 +143,7 @@ syntax enable
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
-    set guioptions-=e
+    "set guioptions-=e
     "set guioptions-=m
     if has("win32")
         try
@@ -151,6 +151,9 @@ if has("gui_running")
             "au GUIEnter * simalt ~x
         catch
         endtry
+    endif
+    if has("gui_gtk2")
+        set guifont=DejaVu\ Sans\ Mono\ 12
     endif
     set guitablabel=%M\ %t
     highlight SpellBad term=underline gui=undercurl guisp=Orange
