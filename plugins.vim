@@ -62,7 +62,7 @@ nnoremap <silent> <F3> :VoomToggle<CR>
 
 " jlanzarotta/bufexplorer {{{1 "
 Bundle 'jlanzarotta/bufexplorer'
-map <leader>b :BufExplorer <cr>
+map <C-S>b :BufExplorer <cr>
 
 " }}} jlanzarotta/bufexplorer "
 
