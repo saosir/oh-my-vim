@@ -138,8 +138,8 @@ syntax enable
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
-    "set guioptions-=e
-    "set guioptions-=m
+    set guioptions-=e
+    set guioptions-=m
     if has("win32")
         try
             set guifont=Source\ Code\ Pro:h12
