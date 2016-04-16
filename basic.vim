@@ -143,12 +143,15 @@ if has("gui_running")
     if has("win32")
         try
             set guifont=Source\ Code\ Pro:h12
-            "au GUIEnter * simalt ~x
         catch
         endtry
     elseif has("unix")
-        set guifont=DejaVu\ Sans\ Mono\ 12
+        try
+            set guifont=Source\ Code\ Pro\ 12
+        catch
+        endtry
     endif
+    "au GUIEnter * simalt ~x
     set guitablabel=%M\ %t
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
@@ -169,7 +172,6 @@ endif
 
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
-
 
 
 function! g:get_cache_dir(suffix)
