@@ -252,6 +252,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " }}} SirVer/ultisnips "
 
+if has('unix')
 " Valloric/YouCompleteMe {{{1 "
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
@@ -267,8 +268,12 @@ let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_key_invoke_completion = '<C-x>'
 " }}} Valloric/YouCompleteMe "
+
+" Rip-Rip/clang_complete {{{ "
+Bundle 'Rip-Rip/clang_complete'
+" }}} Rip-Rip/clang_complete "
+endif
 
 
 " davidhalter/jedi-vim {{{1 "
@@ -318,4 +323,3 @@ map <A-o> :A<cr>
 Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
-Bundle 'Rip-Rip/clang_complete'
