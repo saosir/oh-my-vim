@@ -252,9 +252,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}} SirVer/ultisnips "
 
     
-if !has("win32")
+if has("win16") || has("win32")
 " Valloric/YouCompleteMe {{{1 "
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/vim-ycm/ycm_extra_conf.py'
 "let g:ycm_confirm_extra_conf=0
 "" it may disable my tab key for ultisnips, so make it empty and 
@@ -329,8 +329,3 @@ map <A-o> :A<cr>
 Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
-
-" Shougo/vimshell {{{1 "
-Bundle 'Shougo/vimshell.vim'
-
-" }}} Shougo/vimshell "
