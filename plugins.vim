@@ -34,6 +34,7 @@ Bundle 'vim-scripts/AutoComplPop'
 " vim-scripts/mru.vim {{{1 "
 Bundle 'vim-scripts/mru.vim'
 map <silent> <leader>m :MRU<cr>
+let g:MRU_File=g:get_cache_dir('mru').'_cache_file'
 " }}} vim-scripts/mru.vim "
 
 
