@@ -9,6 +9,14 @@ call vundle#rc()
 filetype  indent on     " required!
 
 
+" cache dir config {{{ "
+let g:cache_dir = '~/.vim/.cache'
+function! s:get_cache_dir(suffix)
+    return resolve(expand(g:cache_dir . '/' . a:suffix))
+endfunction
+" }}} cache dir config "
+
+
 " scrooloose/nerdtree {{{1 "
 Bundle 'scrooloose/nerdtree'
 "let NERDTreeShowHidden=1
@@ -17,7 +25,7 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeChDirMode=0
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.git','\.hg']
-let NERDTreeBookmarksFile=g:get_cache_dir('NERDTreeBookmarks')
+let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 nnoremap <F2> :NERDTreeToggle<CR>
 " }}} scrooloose/nerdtree "
 
@@ -34,7 +42,7 @@ Bundle 'vim-scripts/AutoComplPop'
 " vim-scripts/mru.vim {{{1 "
 Bundle 'vim-scripts/mru.vim'
 map <silent> <leader>m :MRU<cr>
-let g:MRU_File=g:get_cache_dir('mru').'_cache_file'
+let g:MRU_File=s:get_cache_dir('mru').'_cache_file'
 " }}} vim-scripts/mru.vim "
 
 
@@ -111,7 +119,7 @@ let g:ctrlp_max_height=40
 let g:ctrlp_show_hidden=0
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_max_files=20000
-let g:ctrlp_cache_dir=g:get_cache_dir('ctrlp')
+let g:ctrlp_cache_dir=s:get_cache_dir('ctrlp')
 let g:ctrlp_reuse_window='startify'
 let g:ctrlp_extensions=['funky']
 let g:ctrlp_custom_ignore = {
@@ -150,7 +158,7 @@ endfunction
 
 " mhinz/vim-startify {{{1 "
 Bundle 'mhinz/vim-startify'
-let g:startify_session_dir = g:get_cache_dir('sessions')
+let g:startify_session_dir = s:get_cache_dir('sessions')
 let g:startify_change_to_vcs_root = 1
 let g:startify_show_sessions = 1
 nnoremap <F1> :Startify<cr>
