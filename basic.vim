@@ -141,10 +141,7 @@ if has("gui_running")
     set guioptions-=m
     if has("win32")
         try
-            "set guifont=
-            set guifont=DejaVu_Sans_Mono_for_Powerline:h12, Source_Code_Pro:h12, DejaVu_Sans_Mono:h12 
-            "set guifont=Arimo_for_Powerline
-            "set guifont=Ubuntu_Mono_derivative_Powerline
+            set guifont=DejaVu_Sans_Mono_for_Powerline:h12, Source_Code_Pro:h12, DejaVu_Sans_Mono:h12
         catch
         endtry
     elseif has("unix")
@@ -161,7 +158,7 @@ endif
 
 set columns=120
 set lines=35
-"set t_Co=256
+set t_Co=256
 
 
 set encoding=utf-8
@@ -178,44 +175,6 @@ language messages zh_CN.utf-8
 
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
-
-
-
-"function! Source(begin, end)
-    "let lines = getline(a:begin, a:end)
-    "for line in lines
-        "execute line
-    "endfor
-"endfunction
-
-"function! CmdLine(str)
-    "exe "menu Foo.Bar :" . a:str
-    "emenu Foo.Bar
-    "unmenu Foo
-"endfunction
-
-"function! VisualSelection(direction, extra_filter) range
-    "let l:saved_reg = @"
-    "execute "normal! vgvy"
-
-    "let l:pattern = escape(@", '\\/.*$^~[]')
-    "let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    "if a:direction == 'b'
-        "execute "normal ?" . l:pattern . "^M"
-    "elseif a:direction == 'gv'
-        "call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
-    "elseif a:direction == 'replace'
-        "call CmdLine("%s" . '/'. l:pattern . '/')
-    "elseif a:direction == 'f'
-        "execute "normal /" . l:pattern . "^M"
-    "endif
-
-    "let @/ = l:pattern
-    "let @" = l:saved_reg
-"endfunction
-
-
 
 
 " Don't close window, when deleting a buffer
