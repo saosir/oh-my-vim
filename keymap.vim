@@ -29,15 +29,8 @@ map <silent> <leader>ss :source ~/.vim/basic.vim<cr>
 map <silent> <leader>ee :e ~/.vim/basic.vim<cr>
 map <silent> <leader>ek :e ~/.vim/keymap.vim<cr>
 map <silent> <leader>ep :e ~/.vim/plugins.vim<cr>
+map <silent> <leader>eu :e ~/.vim/user.vim<cr>
 
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-
-
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 

@@ -322,13 +322,13 @@ let g:airline_theme="wombat"
 Bundle "terryma/vim-multiple-cursors"
 " }}} terryma/vim-multiple-cursors "
 
-
 " terryma/vim-expand-region {{{1 "
 Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
 " airblade/vim-gitgutter {{{ "
 Bundle 'airblade/vim-gitgutter'
+
 " }}} airblade/vim-gitgutter "
 
 
