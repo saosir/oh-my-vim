@@ -378,3 +378,5 @@ nnoremap <leader>b :Unite buffer
 nnoremap <space>b :Unite file buffer
 " }}} Shougo/unite.vim "
 
+Bundle 'gregsexton/gitv'
+
