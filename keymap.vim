@@ -3,7 +3,6 @@
 map j gj
 map k gk
 
-map <space> /
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader>nh :noh<cr>
@@ -19,8 +18,6 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 
-" Close the current buffer
-"map <leader>c :bd!<cr>
 " bug:conflit with window move
 "nmap <leader>w :w!<cr>
 
@@ -34,10 +31,6 @@ map <silent> <leader>eu :e ~/.vim/user.vim<cr>
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-nmap <C-+> <C-o>
-nmap <C-S-+> <C-o>
-vmap <C-+> <C-o>
-vmap <C-S-+> <C-o>
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
@@ -56,9 +49,9 @@ if has("mac") || has("macunix")
 endif
 
 
-"  insert new line before cursor
+"  insert new prev line under cursor
 imap <C-S-Enter> <Esc>O
-" insert new line after cursor
+" insert new next line under cursor
 imap <C-Enter> <Esc>o
 " delete a wor
 imap <C-Delete> <Esc>lcw
@@ -79,24 +72,65 @@ inoremap kj <esc>
 " select a work
 imap <c-w> <Esc>viw
 
+" edit move cursor
 imap <C-q> <Esc>
 imap <C-a> <Esc>I
 imap <C-e> <Esc>A
 imap <C-f> <Esc>la
 imap <C-b> <Esc>i
-
-
-imap <C-h> <Esc>i
-imap <C-l> <Esc>la
 imap <C-j> <Esc>ja
 imap <C-k> <Esc>ka
 
-imap <M-l> <Esc>la
-imap <M-j> <Esc>ja
-imap <M-k> <Esc>ka
+
+
+function! BufPos_ActivateBuffer(num)
+    let l:count = 1
+    for i in range(1, bufnr("$"))
+        if buflisted(i) && getbufvar(i, "&modifiable")
+            if l:count == a:num
+                exe "buffer " . i
+                return
+            endif
+            let l:count = l:count + 1
+        endif
+    endfor
+    echo "No buffer!"
+endfunction
+
+" map switch buffer by <M-num>
+function! BufPos_Initialize()
+    for i in range(1, 9)
+        exe "map <M-" . i . "> :call BufPos_ActivateBuffer(" . i . ")<CR>"
+    endfor
+    exe "map <M-0> :call BufPos_ActivateBuffer(10)<CR>"
+endfunction
+autocmd VimEnter * call BufPos_Initialize()
 
 
 
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
+
+" Close the current buffer
+map <leader>c :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
+
 
