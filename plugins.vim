@@ -215,15 +215,9 @@ map <leader>w <Plug>(easymotion-bd-w)
 map <leader>s <Plug>(easymotion-s)
 map <space><space> <Plug>(easymotion-s)
 map <leader><leader>s <Plug>(easymotion-s2)
-nmap <leader>f <Plug>(easymotion-f)
-nmap <leader>F <Plug>(easymotion-F)
-map <Leader><Leader>j <Plug>(easymotion-jumptoanywhere)
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-
-
 " }}} easymotion/vim-easymotion "
 
 
@@ -336,4 +330,11 @@ Bundle 'terryma/vim-expand-region'
 " airblade/vim-gitgutter {{{ "
 Bundle 'airblade/vim-gitgutter'
 " }}} airblade/vim-gitgutter "
+
+
+" Shougo/unite.vim {{{ "
+Bundle 'Shougo/unite.vim'
+nnoremap <leader>f :Unite file
+nnoremap <leader>b :Unite buffer
+" }}} Shougo/unite.vim "
 
