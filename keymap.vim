@@ -5,7 +5,26 @@ map k gk
 
 
 "Toggle highlighting on/off, and show current value.
-noremap <silent> <leader>hh :set hlsearch! hlsearch?<CR>
+noremap <leader>hh :set hlsearch! hlsearch?<CR>
+
+"Highlight all occurrences of the current word
+nnoremap <space>w :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
+
+"Another approach is to use the following to map the Enter key (<CR>) 
+"so that pressing Enter toggles highlighting for the current word on and off
+let g:highlighting = 0
+function! Highlighting()
+  if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+    let g:highlighting = 0
+    return ":silent nohlsearch\<CR>"
+  endif
+  let @/ = '\<'.expand('<cword>').'\>'
+  let g:highlighting = 1
+  return ":silent set hlsearch\<CR>"
+endfunction
+nnoremap <silent> <expr> <CR> Highlighting()
+
 
 
 " Smart way to move between windows
