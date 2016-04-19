@@ -5,7 +5,7 @@ map k gk
 
 
 "Toggle highlighting on/off, and show current value.
-noremap <leader>hh :set hlsearch! hlsearch?<CR>
+noremap <leader>h :set hlsearch! hlsearch?<CR>
 
 "Highlight all occurrences of the current word
 nnoremap <space>w :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>

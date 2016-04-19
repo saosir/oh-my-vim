@@ -71,9 +71,9 @@ nnoremap <silent> <F3> :VoomToggle<CR>
 " }}} vim-scripts/VOom "
 
 " jlanzarotta/bufexplorer {{{1 "
-Bundle 'jlanzarotta/bufexplorer'
-map <leader>bb :BufExplorer <cr>
-
+" removed by Unite
+"Bundle 'jlanzarotta/bufexplorer'
+"map <leader>bb :BufExplorer <cr>
 " }}} jlanzarotta/bufexplorer "
 
 
@@ -251,14 +251,13 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'easymotion/vim-easymotion'
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-"map <space> <Plug>(easymotion-bd-w)
 map <leader>w <Plug>(easymotion-bd-w)
 map <leader>s <Plug>(easymotion-s)
 map <space><space> <Plug>(easymotion-s)
-map <leader><leader>s <Plug>(easymotion-s2)
+map <leader>s <Plug>(easymotion-s2)
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <space>j <Plug>(easymotion-j)
+map <space>k <Plug>(easymotion-k)
 " }}} easymotion/vim-easymotion "
 
 
@@ -366,17 +365,18 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
-" airblade/vim-gitgutter {{{ "
+" airblade/vim-gitgutter {{{1 "
 Bundle 'airblade/vim-gitgutter'
-
 " }}} airblade/vim-gitgutter "
 
 
-" Shougo/unite.vim {{{ "
+" Shougo/unite.vim {{{1 "
 Bundle 'Shougo/unite.vim'
-nnoremap <leader>b :Unite buffer
-nnoremap <space>b :Unite file buffer
+nnoremap <leader>b :Unite buffer<cr>
+nnoremap <space>b :Unite file buffer<cr>
 " }}} Shougo/unite.vim "
 
+" gregsexton/gitv {{{1 "
 Bundle 'gregsexton/gitv'
+" }}} gregsexton/gitv "
 
