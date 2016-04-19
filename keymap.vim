@@ -4,11 +4,8 @@ map j gj
 map k gk
 
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader>nh :noh<cr>
-
-" Highlight search results
-map <silent> <leader>hh :set hlsearch<cr>
+"Toggle highlighting on/off, and show current value.
+noremap <silent> <leader>hh :set hlsearch! hlsearch?<CR>
 
 
 " Smart way to move between windows
