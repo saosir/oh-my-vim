@@ -294,6 +294,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["snippet"]
 " }}} SirVer/ultisnips "
 
 if has('unix')
@@ -379,4 +380,6 @@ nnoremap <space>b :Unite file buffer<cr>
 " gregsexton/gitv {{{1 "
 Bundle 'gregsexton/gitv'
 " }}} gregsexton/gitv "
+
+Bundle 'mzlogin/vim-markdown-toc'
 
