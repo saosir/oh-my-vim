@@ -103,7 +103,7 @@ set expandtab
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+"set wrap "Wrap lines
 
 
 

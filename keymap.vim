@@ -48,8 +48,6 @@ map <silent> <leader>eu :e ~/.vim/user.vim<cr>
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 
-" Remap VIM 0 to first non-blank character
-map 0 ^
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
