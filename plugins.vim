@@ -24,7 +24,7 @@ let NERDTreeQuitOnOpen=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeChDirMode=0
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.git','\.hg']
+let NERDTreeIgnore=['\.git','\.hg', '.*.pyc', '.*.obj']
 let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 nnoremap <F2> :NERDTreeToggle<CR>
 " }}} scrooloose/nerdtree "
