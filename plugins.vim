@@ -382,3 +382,7 @@ Bundle 'gregsexton/gitv'
 
 Bundle 'mzlogin/vim-markdown-toc'
 
+" jistr/vim-nerdtree-tabs {{{ "
+Bundle 'jistr/vim-nerdtree-tabs'
+let g:nerdtree_tabs_open_on_gui_startup=0
+" }}} jistr/vim-nerdtree-tabs "
