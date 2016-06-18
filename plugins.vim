@@ -280,6 +280,8 @@ let g:pymode_folding = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_run = 1
 "let g:pymode_run_bind = "<C-S-e>"
+let g:pymode_rope_lookup_project=0
+let g:pymode_rope_regenerate_on_write=0
 " }}} klen/python-mode "
 
 " honza/vim-snippets {{{1 "
