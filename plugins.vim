@@ -39,11 +39,11 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/AutoComplPop'
 " }}} vim-scripts/AutoComplPop "
 
-" vim-scripts/mru.vim {{{1 "
-Bundle 'vim-scripts/mru.vim'
-map <silent> <leader>m :MRU<cr>
-let g:MRU_File=s:get_cache_dir('mru').'_cache_file'
-" }}} vim-scripts/mru.vim "
+"" vim-scripts/mru.vim {{{1 "
+"Bundle 'vim-scripts/mru.vim'
+"map <silent> <leader>m :MRU<cr>
+"let g:MRU_File=s:get_cache_dir('mru').'_cache_file'
+"" }}} vim-scripts/mru.vim "
 
 
 " vim-scripts/DoxygenToolkit.vim {{{1 "
@@ -382,7 +382,16 @@ nnoremap <space>b :Unite file buffer<cr>
 Bundle 'gregsexton/gitv'
 " }}} gregsexton/gitv "
 
+" mzlogin/vim-markdown-toc {{{ "
 Bundle 'mzlogin/vim-markdown-toc'
+"usage:
+":GenTocGFM
+"Generate table of contents in GFM link style.
+"Suit markdown files in GitHub repository, like README.md, or Jekyll/gh-pages use kramdown with GFM support on.
+":GenTocRedcarpet
+"Generate table of contents in Redcarpet link style.
+"Suit Jekyll/gh-pages or anywhere else use Redcarpet as it's markdown parser.
+" }}}  "
 
 " jistr/vim-nerdtree-tabs {{{ "
 Bundle 'jistr/vim-nerdtree-tabs'
