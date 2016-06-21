@@ -29,6 +29,11 @@ let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 nnoremap <F2> :NERDTreeToggle<CR>
 " }}} scrooloose/nerdtree "
 
+" jistr/vim-nerdtree-tabs {{{1 "
+Bundle 'jistr/vim-nerdtree-tabs'
+let g:nerdtree_tabs_open_on_gui_startup=0
+" }}} jistr/vim-nerdtree-tabs "
+
 " scrooloose/nerdcommenter {{{1 "
 Bundle 'scrooloose/nerdcommenter'
 " }}} scrooloose/nerdcommenter "
@@ -38,12 +43,6 @@ Bundle 'scrooloose/nerdcommenter'
 " vim-scripts/AutoComplPop {{{1 "
 Bundle 'vim-scripts/AutoComplPop'
 " }}} vim-scripts/AutoComplPop "
-
-"" vim-scripts/mru.vim {{{1 "
-"Bundle 'vim-scripts/mru.vim'
-"map <silent> <leader>m :MRU<cr>
-"let g:MRU_File=s:get_cache_dir('mru').'_cache_file'
-"" }}} vim-scripts/mru.vim "
 
 
 " vim-scripts/DoxygenToolkit.vim {{{1 "
@@ -70,13 +69,6 @@ Bundle 'vim-scripts/VOoM'
 nnoremap <silent> <F3> :VoomToggle<CR>
 " }}} vim-scripts/VOom "
 
-" jlanzarotta/bufexplorer {{{1 "
-" removed by Unite
-"Bundle 'jlanzarotta/bufexplorer'
-"map <leader>bb :BufExplorer <cr>
-" }}} jlanzarotta/bufexplorer "
-
-
 
 
 
@@ -94,12 +86,20 @@ let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 " }}} tpope/vim-surround "
 
-" tpope/vim-markdow {{{1 "
-Bundle 'tpope/vim-markdown'
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:vim_markdown_folding_disabled=1
-" }}} tpope/vim-markdow "
+
+" plasticboy/vim-markdown  {{{ "
+Bundle "plasticboy/vim-markdown"
+let g:vim_markdown_folding_disabled = 1
+" }}}  "
+
+" mzlogin/vim-markdown-toc {{{ "
+Bundle 'mzlogin/vim-markdown-toc'
+"usage:
+":GenTocGFM
+"Generate table of contents in GFM link style.
+":GenTocRedcarpet
+"Generate table of contents in Redcarpet link style.
+" }}}  "
 
 " tpope/vim-fugitive {{{1 "
 Bundle 'tpope/vim-fugitive'
@@ -205,8 +205,6 @@ let g:startify_show_sessions = 1
 nnoremap <F1> :Startify<cr>
 " }}} mhinz/vim-startify "
 
-"Bundle 'vim-repeat'
-
 
 " nathanaelkane/vim-indent-guides {{{1 "
 
@@ -230,21 +228,18 @@ endif
 
 " rhysd/clever-f.vim {{{1 "
 Bundle 'rhysd/clever-f.vim'
-
 " }}} rhysd/clever-f.vim "
 
 
 " FooSoft/vim-argwrap {{{1 "
 Bundle 'FooSoft/vim-argwrap'
 nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
-
 " }}} FooSoft/vim-argwrap "
 
 
 
 " bronson/vim-trailing-whitespacee {{{1 "
 Bundle 'bronson/vim-trailing-whitespace'
-
 " }}} bronson/vim-trailing-whitespace "
 
 " easymotion/vim-easymotion {{{1 "
@@ -282,6 +277,7 @@ let g:pymode_run = 1
 "let g:pymode_run_bind = "<C-S-e>"
 let g:pymode_rope_lookup_project=0
 let g:pymode_rope_regenerate_on_write=0
+let g:pymode_rope_goto_definition_bind = '<F12>'
 " }}} klen/python-mode "
 
 " honza/vim-snippets {{{1 "
@@ -315,10 +311,6 @@ if has('unix')
     let g:ycm_enable_diagnostic_signs = 0
     let g:ycm_enable_diagnostic_highlighting = 0
     " }}} Valloric/YouCompleteMe "
-
-    " Rip-Rip/clang_complete {{{ "
-    "Bundle 'Rip-Rip/clang_complete'
-    " }}} Rip-Rip/clang_complete "
 endif
 
 
@@ -382,18 +374,3 @@ nnoremap <space>b :Unite file buffer<cr>
 Bundle 'gregsexton/gitv'
 " }}} gregsexton/gitv "
 
-" mzlogin/vim-markdown-toc {{{ "
-Bundle 'mzlogin/vim-markdown-toc'
-"usage:
-":GenTocGFM
-"Generate table of contents in GFM link style.
-"Suit markdown files in GitHub repository, like README.md, or Jekyll/gh-pages use kramdown with GFM support on.
-":GenTocRedcarpet
-"Generate table of contents in Redcarpet link style.
-"Suit Jekyll/gh-pages or anywhere else use Redcarpet as it's markdown parser.
-" }}}  "
-
-" jistr/vim-nerdtree-tabs {{{ "
-Bundle 'jistr/vim-nerdtree-tabs'
-let g:nerdtree_tabs_open_on_gui_startup=0
-" }}} jistr/vim-nerdtree-tabs "
