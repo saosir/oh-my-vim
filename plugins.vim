@@ -179,7 +179,6 @@ Bundle 'godlygeek/tabular'
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a  :Tabularize
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -296,8 +295,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 if has('unix')
     " Valloric/YouCompleteMe {{{1 "
-    Bundle 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
+    "Bundle 'Valloric/YouCompleteMe'
+    "let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
     let g:ycm_confirm_extra_conf=0
     " it may disable my tab key for ultisnips, so make it empty and
     " I use <C-n> and <C-p> select one Completion
