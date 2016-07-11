@@ -172,3 +172,13 @@ autocmd BufEnter .vimrc*,.exrc nmap ,mc !!boxes -d vim-cmt<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ,mc !boxes -d vim-cmt<CR>
 autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
+
+" clang-format
+
+function! FormatFile()
+  let l:lines="all"
+  pyf ~/.vim/clang-format.py
+endfunction
+
+map <c-s-f> :call FormatFile()<cr>
+map <leader>f :pyf ~/.vim/clang-format.py<cr>
