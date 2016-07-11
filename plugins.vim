@@ -34,6 +34,11 @@ let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 nnoremap <F2> :NERDTreeToggle<CR>
 " }}} scrooloose/nerdtree "
 
+" jistr/vim-nerdtree-tabs {{{1 "
+Bundle 'jistr/vim-nerdtree-tabs'
+let g:nerdtree_tabs_open_on_gui_startup=0
+" }}} jistr/vim-nerdtree-tabs "
+
 " scrooloose/nerdcommenter {{{1 "
 Bundle 'scrooloose/nerdcommenter'
 " }}} scrooloose/nerdcommenter "
@@ -84,12 +89,6 @@ let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 " }}} tpope/vim-surround "
 
-" tpope/vim-markdow {{{1 "
-Bundle 'tpope/vim-markdown'
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:vim_markdown_folding_disabled=1
-" }}} tpope/vim-markdow "
 
 
 " jiangmiao/auto-pairs {{{1 "
@@ -129,7 +128,6 @@ Bundle 'godlygeek/tabular'
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a  :Tabularize
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -155,8 +153,6 @@ let g:startify_show_sessions = 1
 nnoremap <F1> :Startify<cr>
 " }}} mhinz/vim-startify "
 
-"Bundle 'vim-repeat'
-
 
 " nathanaelkane/vim-indent-guides {{{1 "
 
@@ -180,21 +176,18 @@ endif
 
 " rhysd/clever-f.vim {{{1 "
 Bundle 'rhysd/clever-f.vim'
-
 " }}} rhysd/clever-f.vim "
 
 
 " FooSoft/vim-argwrap {{{1 "
 Bundle 'FooSoft/vim-argwrap'
 nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
-
 " }}} FooSoft/vim-argwrap "
 
 
 
 " bronson/vim-trailing-whitespacee {{{1 "
 Bundle 'bronson/vim-trailing-whitespace'
-
 " }}} bronson/vim-trailing-whitespace "
 
 " easymotion/vim-easymotion {{{1 "
@@ -232,6 +225,7 @@ let g:pymode_run = 1
 "let g:pymode_run_bind = "<C-S-e>"
 let g:pymode_rope_lookup_project=0
 let g:pymode_rope_regenerate_on_write=0
+let g:pymode_rope_goto_definition_bind = '<F12>'
 " }}} klen/python-mode "
 
 " honza/vim-snippets {{{1 "
@@ -250,8 +244,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 if has('unix')
     " Valloric/YouCompleteMe {{{1 "
-    Bundle 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
+    "Bundle 'Valloric/YouCompleteMe'
+    "let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
     let g:ycm_confirm_extra_conf=0
     " it may disable my tab key for ultisnips, so make it empty and
     " I use <C-n> and <C-p> select one Completion
@@ -265,10 +259,6 @@ if has('unix')
     let g:ycm_enable_diagnostic_signs = 0
     let g:ycm_enable_diagnostic_highlighting = 0
     " }}} Valloric/YouCompleteMe "
-
-    " Rip-Rip/clang_complete {{{ "
-    "Bundle 'Rip-Rip/clang_complete'
-    " }}} Rip-Rip/clang_complete "
 endif
 
 
@@ -378,7 +368,7 @@ nnoremap <leader>b :Unite buffer<cr>
 nnoremap <space>b :Unite file buffer<cr>
 " }}} Shougo/unite.vim "
 
-"  mzlogin/vim-markdown-toc{{{1 "
+" mzlogin/vim-markdown-toc{{{1 "
 Bundle 'mzlogin/vim-markdown-toc'
 " }}}  "
 
