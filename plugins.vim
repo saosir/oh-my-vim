@@ -1,20 +1,25 @@
 " bundle {{{1 "
 set nocompatible               " be iMproved
 filetype off                   " required!
-"set rtp+=~/.vim/
-"set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/bundle/ultisnips/
 call vundle#rc()
-" }}} bundle "
 filetype  indent on     " required!
+" }}} bundle "
 
 
-" cache dir config {{{ "
+" cache dir config {{{1 "
 let g:cache_dir = '~/.vim/.cache'
 function! s:get_cache_dir(suffix)
     return resolve(expand(g:cache_dir . '/' . a:suffix))
 endfunction
 " }}} cache dir config "
+
+
+
+" jistr/vim-nerdtree-tabs {{{ "
+Bundle 'jistr/vim-nerdtree-tabs'
+let g:nerdtree_tabs_open_on_gui_startup=0
+" }}} jistr/vim-nerdtree-tabs "
 
 
 " scrooloose/nerdtree {{{1 "
@@ -38,12 +43,6 @@ Bundle 'scrooloose/nerdcommenter'
 " vim-scripts/AutoComplPop {{{1 "
 Bundle 'vim-scripts/AutoComplPop'
 " }}} vim-scripts/AutoComplPop "
-
-" vim-scripts/mru.vim {{{1 "
-Bundle 'vim-scripts/mru.vim'
-map <silent> <leader>m :MRU<cr>
-let g:MRU_File=s:get_cache_dir('mru').'_cache_file'
-" }}} vim-scripts/mru.vim "
 
 
 " vim-scripts/DoxygenToolkit.vim {{{1 "
@@ -70,15 +69,6 @@ Bundle 'vim-scripts/VOoM'
 nnoremap <silent> <F3> :VoomToggle<CR>
 " }}} vim-scripts/VOom "
 
-" jlanzarotta/bufexplorer {{{1 "
-" removed by Unite
-"Bundle 'jlanzarotta/bufexplorer'
-"map <leader>bb :BufExplorer <cr>
-" }}} jlanzarotta/bufexplorer "
-
-
-
-
 
 " tpope/vim-surround {{{1 "
 Bundle 'tpope/vim-surround'
@@ -101,53 +91,13 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 let g:vim_markdown_folding_disabled=1
 " }}} tpope/vim-markdow "
 
-" tpope/vim-fugitive {{{1 "
-Bundle 'tpope/vim-fugitive'
-
-nnoremap <Leader>gn :Unite output:echo\ system("git\ init")<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>go :Gread<CR>
-nnoremap <Leader>gR :Gremove<CR>
-nnoremap <Leader>gm :Gmove<Space>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gd :Gvdiff<CR>
-"nnoremap <leader>gd :Gvdiff
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gB :Gbrowse<CR>
-nnoremap <Leader>gp :Git! push<CR>
-nnoremap <Leader>gP :Git! pull<CR>
-nnoremap <Leader>gi :Git!<Space>
-nnoremap <Leader>ge :Gedit<CR>
-nnoremap <Leader>gE :Gedit<Space>
-nnoremap <Leader>gl :exe "silent Glog <Bar> Unite -no-quit
-            \ quickfix"<CR>:redraw!<CR>
-nnoremap <Leader>gL :exe "silent Glog -- <Bar> Unite -no-quit
-            \ quickfix"<CR>:redraw!<CR>
-nnoremap <Leader>gt :!tig<CR>:redraw!<CR>
-nnoremap <Leader>gS :exe "silent !shipit"<CR>:redraw!<CR>
-nnoremap <Leader>gg :exe 'silent Ggrep -i '.input("Pattern: ")<Bar>Unite
-            \ quickfix -no-quit<CR>
-nnoremap <Leader>ggm :exe 'silent Glog --grep='.input("Pattern: ").' <Bar>
-            \Unite -no-quit quickfix'<CR>
-nnoremap <Leader>ggt :exe 'silent Glog -S='.input("Pattern: ").' <Bar>
-            \Unite -no-quit quickfix'<CR>
-
-nnoremap <Leader>ggc :silent! Ggrep -i<Space>
-
-" for the diffmode
-noremap <Leader>du :diffupdate<CR>
-
-if !exists(":Gdiffoff")
-    command Gdiffoff diffoff | q | Gedit
-endif
-noremap <Leader>dq :Gdiffoff<CR>
-" }}} tpope/vim-fugitive "
 
 " jiangmiao/auto-pairs {{{1 "
-
 Bundle 'jiangmiao/auto-pairs'
 " }}} jiangmiao/auto-pairs "
+
+
+
 
 " kien/ctrlp.vim {{{1 "
 Bundle 'kien/ctrlp.vim'
@@ -367,10 +317,60 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
+
+" tpope/vim-fugitive {{{1 "
+Bundle 'tpope/vim-fugitive'
+
+nnoremap <Leader>gn :Unite output:echo\ system("git\ init")<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>go :Gread<CR>
+nnoremap <Leader>gR :Gremove<CR>
+nnoremap <Leader>gm :Gmove<Space>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gvdiff<CR>
+"nnoremap <leader>gd :Gvdiff
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gB :Gbrowse<CR>
+nnoremap <Leader>gp :Git! push<CR>
+nnoremap <Leader>gP :Git! pull<CR>
+nnoremap <Leader>gi :Git!<Space>
+nnoremap <Leader>ge :Gedit<CR>
+nnoremap <Leader>gE :Gedit<Space>
+nnoremap <Leader>gl :exe "silent Glog <Bar> Unite -no-quit
+            \ quickfix"<CR>:redraw!<CR>
+nnoremap <Leader>gL :exe "silent Glog -- <Bar> Unite -no-quit
+            \ quickfix"<CR>:redraw!<CR>
+nnoremap <Leader>gt :!tig<CR>:redraw!<CR>
+nnoremap <Leader>gS :exe "silent !shipit"<CR>:redraw!<CR>
+nnoremap <Leader>gg :exe 'silent Ggrep -i '.input("Pattern: ")<Bar>Unite
+            \ quickfix -no-quit<CR>
+nnoremap <Leader>ggm :exe 'silent Glog --grep='.input("Pattern: ").' <Bar>
+            \Unite -no-quit quickfix'<CR>
+nnoremap <Leader>ggt :exe 'silent Glog -S='.input("Pattern: ").' <Bar>
+            \Unite -no-quit quickfix'<CR>
+
+nnoremap <Leader>ggc :silent! Ggrep -i<Space>
+
+" for the diffmode
+noremap <Leader>du :diffupdate<CR>
+
+if !exists(":Gdiffoff")
+    command Gdiffoff diffoff | q | Gedit
+endif
+noremap <Leader>dq :Gdiffoff<CR>
+" }}} tpope/vim-fugitive "
+
+
+
 " airblade/vim-gitgutter {{{1 "
 Bundle 'airblade/vim-gitgutter'
 " }}} airblade/vim-gitgutter "
 
+
+" gregsexton/gitv {{{1 "
+Bundle 'gregsexton/gitv'
+" }}} gregsexton/gitv "
 
 " Shougo/unite.vim {{{1 "
 Bundle 'Shougo/unite.vim'
@@ -378,13 +378,8 @@ nnoremap <leader>b :Unite buffer<cr>
 nnoremap <space>b :Unite file buffer<cr>
 " }}} Shougo/unite.vim "
 
-" gregsexton/gitv {{{1 "
-Bundle 'gregsexton/gitv'
-" }}} gregsexton/gitv "
-
+"  mzlogin/vim-markdown-toc{{{1 "
 Bundle 'mzlogin/vim-markdown-toc'
+" }}}  "
 
-" jistr/vim-nerdtree-tabs {{{ "
-Bundle 'jistr/vim-nerdtree-tabs'
-let g:nerdtree_tabs_open_on_gui_startup=0
-" }}} jistr/vim-nerdtree-tabs "
+
