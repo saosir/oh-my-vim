@@ -370,7 +370,7 @@ Plugin 'mzlogin/vim-markdown-toc'
 " }}}  "
 
 
-Plugin 'c.vim'
+"Plugin 'c.vim'
 
 
 call vundle#end()            " required
