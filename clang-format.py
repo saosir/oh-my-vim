@@ -104,3 +104,4 @@ def main():
     vim.command('goto %d' % (output['Cursor'] + 1))
 
 main()
+
