@@ -1,8 +1,9 @@
 " bundle {{{1 "
 set nocompatible               " be iMproved
 filetype off                   " required!
+set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/ultisnips/
-call vundle#rc()
+call vundle#begin()
 filetype  indent on     " required!
 " }}} bundle "
 
@@ -17,13 +18,13 @@ endfunction
 
 
 " jistr/vim-nerdtree-tabs {{{ "
-Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_gui_startup=0
 " }}} jistr/vim-nerdtree-tabs "
 
 
 " scrooloose/nerdtree {{{1 "
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=0
 let NERDTreeShowLineNumbers=1
@@ -34,24 +35,20 @@ let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 nnoremap <F2> :NERDTreeToggle<CR>
 " }}} scrooloose/nerdtree "
 
-" jistr/vim-nerdtree-tabs {{{1 "
-Bundle 'jistr/vim-nerdtree-tabs'
-let g:nerdtree_tabs_open_on_gui_startup=0
-" }}} jistr/vim-nerdtree-tabs "
 
 " scrooloose/nerdcommenter {{{1 "
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 " }}} scrooloose/nerdcommenter "
 
 
 
 " vim-scripts/AutoComplPop {{{1 "
-Bundle 'vim-scripts/AutoComplPop'
+Plugin 'vim-scripts/AutoComplPop'
 " }}} vim-scripts/AutoComplPop "
 
 
 " vim-scripts/DoxygenToolkit.vim {{{1 "
-Bundle 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 let g:DoxygenToolkit_authorName='liangsijian'
 map <c-d> :Dox<cr>
 let g:syntax_extra_cpp='doxygen'
@@ -61,7 +58,7 @@ au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 " }}} vim-scripts/DoxygenToolkit.vim "
 
 " vim-scripts/a.vim {{{1 "
-Bundle 'vim-scripts/a.vim'
+Plugin 'vim-scripts/a.vim'
 map <c-tab> :A<cr>
 map <leader>as :AS
 map <leader>av :AV
@@ -70,13 +67,13 @@ map <A-o> :A<cr>
 
 
 " vim-scripts/VOom {{{1 "
-Bundle 'vim-scripts/VOoM'
+Plugin 'vim-scripts/VOoM'
 nnoremap <silent> <F3> :VoomToggle<CR>
 " }}} vim-scripts/VOom "
 
 
 " tpope/vim-surround {{{1 "
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 let b:surround_{char2nr("v")} = "{{ \r }}"
 let b:surround_{char2nr("{")} = "{{ \r }}"
@@ -92,14 +89,14 @@ let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 
 " jiangmiao/auto-pairs {{{1 "
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 " }}} jiangmiao/auto-pairs "
 
 
 
 
 " kien/ctrlp.vim {{{1 "
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 nmap \m :CtrlPMRUFiles<cr>
 map <S-A-o> :CtrlPMRUFiles<cr>
 nmap \b :CtrlPBuffer<cr>
@@ -124,7 +121,7 @@ colorschem wombat256
 
 
 " godlygeek/tabular {{{1 "
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
@@ -146,7 +143,7 @@ endfunction
 
 
 " mhinz/vim-startify {{{1 "
-Bundle 'mhinz/vim-startify'
+Plugin 'mhinz/vim-startify'
 let g:startify_session_dir = s:get_cache_dir('sessions')
 let g:startify_change_to_vcs_root = 1
 let g:startify_show_sessions = 1
@@ -156,7 +153,7 @@ nnoremap <F1> :Startify<cr>
 
 " nathanaelkane/vim-indent-guides {{{1 "
 
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
@@ -175,23 +172,23 @@ endif
 " }}} nathanaelkane/vim-indent-guides "
 
 " rhysd/clever-f.vim {{{1 "
-Bundle 'rhysd/clever-f.vim'
+Plugin 'rhysd/clever-f.vim'
 " }}} rhysd/clever-f.vim "
 
 
 " FooSoft/vim-argwrap {{{1 "
-Bundle 'FooSoft/vim-argwrap'
+Plugin 'FooSoft/vim-argwrap'
 nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 " }}} FooSoft/vim-argwrap "
 
 
 
 " bronson/vim-trailing-whitespacee {{{1 "
-Bundle 'bronson/vim-trailing-whitespace'
+Plugin 'bronson/vim-trailing-whitespace'
 " }}} bronson/vim-trailing-whitespace "
 
 " easymotion/vim-easymotion {{{1 "
-Bundle 'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-w)
@@ -205,7 +202,7 @@ map <space>k <Plug>(easymotion-k)
 
 
 " scrooloose/syntastic {{{1 "
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -218,7 +215,7 @@ let g:syntastic_check_on_wq = 0
 " }}} scrooloose/syntastic "
 
 " klen/python-mode {{{1 "
-Bundle 'klen/python-mode'
+Plugin 'klen/python-mode'
 let g:pymode_folding = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_run = 1
@@ -229,12 +226,12 @@ let g:pymode_rope_goto_definition_bind = '<F12>'
 " }}} klen/python-mode "
 
 " honza/vim-snippets {{{1 "
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 " }}} honza/vim-snippets "
 
 " SirVer/ultisnips {{{1 "
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips/"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -244,7 +241,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 if has('unix')
     " Valloric/YouCompleteMe {{{1 "
-    "Bundle 'Valloric/YouCompleteMe'
+    "Plugin 'Valloric/YouCompleteMe'
     "let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
     let g:ycm_confirm_extra_conf=0
     " it may disable my tab key for ultisnips, so make it empty and
@@ -263,7 +260,7 @@ endif
 
 
 " davidhalter/jedi-vim {{{1 "
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 let g:jedi#show_call_signatures = "1"
 let g:jedi#popup_select_first = 0
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -277,7 +274,7 @@ let g:jedi#rename_command = "<S-A-r>"
 
 " bling/vim-airline {{{1 "
 
-Bundle 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -294,22 +291,22 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <TAB> :bn<CR>
 nmap <S-TAB> :bp<CR>
-Bundle 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme="wombat"
 " }}} bling/vim-airline "
 
 
 " terryma/vim-multiple-cursors {{{1 "
-Bundle "terryma/vim-multiple-cursors"
+Plugin 'terryma/vim-multiple-cursors'
 " }}} terryma/vim-multiple-cursors "
 
 " terryma/vim-expand-region {{{1 "
-Bundle 'terryma/vim-expand-region'
+Plugin 'terryma/vim-expand-region'
 " }}} vim-expand-region "
 
 
 " tpope/vim-fugitive {{{1 "
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 nnoremap <Leader>gn :Unite output:echo\ system("git\ init")<CR>
 nnoremap <Leader>gs :Gstatus<CR>
@@ -354,22 +351,27 @@ noremap <Leader>dq :Gdiffoff<CR>
 
 
 " airblade/vim-gitgutter {{{1 "
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 " }}} airblade/vim-gitgutter "
 
 
 " gregsexton/gitv {{{1 "
-Bundle 'gregsexton/gitv'
+Plugin 'gregsexton/gitv'
 " }}} gregsexton/gitv "
 
 " Shougo/unite.vim {{{1 "
-Bundle 'Shougo/unite.vim'
+Plugin 'Shougo/unite.vim'
 nnoremap <leader>b :Unite buffer<cr>
 nnoremap <space>b :Unite file buffer<cr>
 " }}} Shougo/unite.vim "
 
 " mzlogin/vim-markdown-toc{{{1 "
-Bundle 'mzlogin/vim-markdown-toc'
+Plugin 'mzlogin/vim-markdown-toc'
 " }}}  "
 
 
+Plugin 'c.vim'
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required

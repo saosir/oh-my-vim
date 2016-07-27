@@ -180,5 +180,5 @@ function! FormatFile()
   pyf ~/.vim/clang-format.py
 endfunction
 
-map <c-s-f> :call FormatFile()<cr>
+"map <c-s-f> :call FormatFile()<cr>
 map <leader>f :pyf ~/.vim/clang-format.py<cr>
