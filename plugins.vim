@@ -8,12 +8,10 @@ filetype  indent on     " required!
 " }}} bundle "
 
 
-" cache dir config {{{1 "
 let g:cache_dir = '~/.vim/.cache'
 function! s:get_cache_dir(suffix)
     return resolve(expand(g:cache_dir . '/' . a:suffix))
 endfunction
-" }}} cache dir config "
 
 
 
