@@ -165,7 +165,10 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,gb18030,gk2312
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-language messages zh_CN.utf-8
+try
+    language messages zh_CN.utf-8
+catch
+endtry
 "if has('win32')
     "set encoding=chinese
     "set fileencodings=utf-8,gb2312,gbk,gb18030,big5
