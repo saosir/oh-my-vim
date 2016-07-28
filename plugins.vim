@@ -238,9 +238,9 @@ let g:UltiSnipsEditSplit="vertical"
 " }}} SirVer/ultisnips "
 
 if has('unix')
-    " Valloric/YouCompleteMe {{{1 "
-    "Plugin 'Valloric/YouCompleteMe'
-    "let g:ycm_global_ycm_extra_conf = '~/workspace/ycm_extra_conf.py'
+     "Valloric/YouCompleteMe {{{1 "
+    Plugin 'Valloric/YouCompleteMe'
+    let g:ycm_global_ycm_extra_conf = '~/ycm_extra_conf.py'
     let g:ycm_confirm_extra_conf=0
     " it may disable my tab key for ultisnips, so make it empty and
     " I use <C-n> and <C-p> select one Completion
@@ -253,6 +253,7 @@ if has('unix')
     let g:ycm_complete_in_strings = 1 " Completion in string
     let g:ycm_enable_diagnostic_signs = 0
     let g:ycm_enable_diagnostic_highlighting = 0
+    let g:clang_library_path = '/usr/lib/llvm-3.8/lib/libclang.so.1'
     " }}} Valloric/YouCompleteMe "
 endif
 
