@@ -2,3 +2,4 @@ bundle/
 doc/tags
 .netrwhist
 .cache/
+*.pyc

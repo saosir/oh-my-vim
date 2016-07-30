@@ -240,7 +240,7 @@ let g:UltiSnipsEditSplit="vertical"
 if has('unix')
      "Valloric/YouCompleteMe {{{1 "
     Plugin 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '~/ycm_extra_conf.py'
+    let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
     let g:ycm_confirm_extra_conf=0
     " it may disable my tab key for ultisnips, so make it empty and
     " I use <C-n> and <C-p> select one Completion
