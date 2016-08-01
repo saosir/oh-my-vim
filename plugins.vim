@@ -358,11 +358,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
 " }}} gregsexton/gitv "
 
-" Shougo/unite.vim {{{1 "
-Plugin 'Shougo/unite.vim'
-nnoremap <leader>b :Unite buffer<cr>
-nnoremap <space>b :Unite file buffer<cr>
-" }}} Shougo/unite.vim "
+
 
 " mzlogin/vim-markdown-toc{{{1 "
 Plugin 'mzlogin/vim-markdown-toc'
