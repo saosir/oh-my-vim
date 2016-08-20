@@ -2,7 +2,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/bundle/ultisnips/
+
 call vundle#begin()
 filetype  indent on     " required!
 " }}} bundle "
@@ -103,7 +103,7 @@ let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_max_height=40
 let g:ctrlp_show_hidden=0
 let g:ctrlp_follow_symlinks=1
-let g:ctrlp_max_files=20000
+let g:ctrlp_max_files=200
 let g:ctrlp_cache_dir=s:get_cache_dir('ctrlp')
 let g:ctrlp_reuse_window='startify'
 let g:ctrlp_extensions=['funky']
@@ -228,14 +228,7 @@ Plugin 'honza/vim-snippets'
 
 " }}} honza/vim-snippets "
 
-" SirVer/ultisnips {{{1 "
-Plugin 'SirVer/ultisnips'
-let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips/"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-" }}} SirVer/ultisnips "
+
 
 if has('unix')
      "Valloric/YouCompleteMe {{{1 "
@@ -335,12 +328,9 @@ nnoremap <Leader>ggm :exe 'silent Glog --grep='.input("Pattern: ").' <Bar>
             \Unite -no-quit quickfix'<CR>
 nnoremap <Leader>ggt :exe 'silent Glog -S='.input("Pattern: ").' <Bar>
             \Unite -no-quit quickfix'<CR>
-
 nnoremap <Leader>ggc :silent! Ggrep -i<Space>
-
 " for the diffmode
 noremap <Leader>du :diffupdate<CR>
-
 if !exists(":Gdiffoff")
     command Gdiffoff diffoff | q | Gedit
 endif
@@ -364,9 +354,9 @@ Plugin 'gregsexton/gitv'
 Plugin 'mzlogin/vim-markdown-toc'
 " }}}  "
 
-
-"Plugin 'c.vim'
-
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
