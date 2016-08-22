@@ -181,9 +181,6 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 
 
-" bronson/vim-trailing-whitespacee {{{1 "
-Plugin 'bronson/vim-trailing-whitespace'
-" }}} bronson/vim-trailing-whitespace "
 
 " easymotion/vim-easymotion {{{1 "
 Plugin 'easymotion/vim-easymotion'
