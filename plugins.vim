@@ -21,6 +21,11 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 " }}} jistr/vim-nerdtree-tabs "
 
 
+" majutsushi/tagbar {{{1 "
+Plugin 'majutsushi/tagbar'
+map <F6> TagbarToggle
+" }}} majutsushi/tagbar "
+
 " scrooloose/nerdtree {{{1 "
 Plugin 'scrooloose/nerdtree'
 "let NERDTreeShowHidden=1
@@ -57,9 +62,8 @@ au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
 
 " vim-scripts/a.vim {{{1 "
 Plugin 'vim-scripts/a.vim'
-map <c-tab> :A<cr>
-map <leader>as :AS
-map <leader>av :AV
+map <leader>as :AS<cr>
+map <leader>av :AV<cr>
 map <A-o> :A<cr>
 " }}} vim-scripts/a.vim "
 
@@ -72,16 +76,6 @@ nnoremap <silent> <F3> :VoomToggle<CR>
 
 " tpope/vim-surround {{{1 "
 Plugin 'tpope/vim-surround'
-
-let b:surround_{char2nr("v")} = "{{ \r }}"
-let b:surround_{char2nr("{")} = "{{ \r }}"
-let b:surround_{char2nr("%")} = "{% \r %}"
-let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
-let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
-let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
-let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
-let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
-
 " }}} tpope/vim-surround "
 
 
@@ -97,8 +91,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
 nmap \m :CtrlPMRUFiles<cr>
 map <S-A-o> :CtrlPMRUFiles<cr>
+map <space>m :CtrlPMRUFiles<cr>
 nmap \b :CtrlPBuffer<cr>
 map <S-A-b> :CtrlPBuffer<cr>
+map <space>b :CtrlPBuffer<cr>
 let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_max_height=40
 let g:ctrlp_show_hidden=0
@@ -183,10 +179,8 @@ Plugin 'easymotion/vim-easymotion'
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-w)
-map <leader>s <Plug>(easymotion-s)
 map <space><space> <Plug>(easymotion-s)
 map <leader>s <Plug>(easymotion-s2)
-" JK motions: Line motions
 map <space>j <Plug>(easymotion-j)
 map <space>k <Plug>(easymotion-k)
 " }}} easymotion/vim-easymotion "
@@ -198,9 +192,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " }}} scrooloose/syntastic "

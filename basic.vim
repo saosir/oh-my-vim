@@ -1,7 +1,7 @@
 
 
 " Sets how many lines of history VIM has to remember
-set history=700
+set history=50
 set nu
 
 " Enable filetype plugins
@@ -80,7 +80,7 @@ set tm=500
 set foldcolumn=1
 
 " Use Unix as the standard file type
-set ffs=unix,dos
+set ffs=unix
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
@@ -136,9 +136,13 @@ syntax enable
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guioptions-=T
     set guioptions-=e
     set guioptions-=m
+    set guioptions-=T  " remove toolbar
+    set guioptions-=r  " remove right-hand scroll bar
+    set guioptions-=l  " remove left-hand scroll bar
+    set guioptions-=L  " remove left-hand scroll bar even if there is a vertical split
+    set guioptions-=b  " remove bottom scroll bar
     if has("win32")
         try
             set guifont=DejaVu_Sans_Mono_for_Powerline:h12, Source_Code_Pro:h12, DejaVu_Sans_Mono:h12
@@ -150,7 +154,7 @@ if has("gui_running")
         catch
         endtry
     endif
-    "au GUIEnter * simalt ~x
+    au GUIEnter * simalt ~x
     set guitablabel=%M\ %t
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
