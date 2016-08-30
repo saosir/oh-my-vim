@@ -169,10 +169,6 @@ endif
 
 " }}} nathanaelkane/vim-indent-guides "
 
-" rhysd/clever-f.vim {{{1 "
-Plugin 'rhysd/clever-f.vim'
-" }}} rhysd/clever-f.vim "
-
 
 " FooSoft/vim-argwrap {{{1 "
 Plugin 'FooSoft/vim-argwrap'
@@ -214,7 +210,6 @@ Plugin 'klen/python-mode'
 let g:pymode_folding = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_run = 1
-"let g:pymode_run_bind = "<C-S-e>"
 let g:pymode_rope_lookup_project=0
 let g:pymode_rope_regenerate_on_write=0
 let g:pymode_rope_goto_definition_bind = '<F12>'
@@ -229,21 +224,19 @@ Plugin 'honza/vim-snippets'
 
 if has('unix')
      "Valloric/YouCompleteMe {{{1 "
-    Plugin 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-    let g:ycm_confirm_extra_conf=0
-    " it may disable my tab key for ultisnips, so make it empty and
-    " I use <C-n> and <C-p> select one Completion
-    let g:ycm_key_list_select_completion=[]
-    let g:ycm_key_list_previous_completion=[]
-    let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-    let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-    let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-    let g:ycm_complete_in_comments = 1 " Completion in comments
-    let g:ycm_complete_in_strings = 1 " Completion in string
-    let g:ycm_enable_diagnostic_signs = 0
-    let g:ycm_enable_diagnostic_highlighting = 0
-    let g:clang_library_path = '/usr/lib/llvm-3.8/lib/libclang.so.1'
+"    Plugin 'Valloric/YouCompleteMe'
+    "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+    "let g:ycm_confirm_extra_conf=0
+    "let g:ycm_key_list_select_completion=[]
+    "let g:ycm_key_list_previous_completion=[]
+    "let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+    "let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+    "let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+    "let g:ycm_complete_in_comments = 1 " Completion in comments
+    "let g:ycm_complete_in_strings = 1 " Completion in string
+    "let g:ycm_enable_diagnostic_signs = 0
+    "let g:ycm_enable_diagnostic_highlighting = 0
+    "let g:clang_library_path = '/usr/lib/llvm-3.8/lib/libclang.so.1'
     " }}} Valloric/YouCompleteMe "
 endif
 
