@@ -325,7 +325,9 @@ noremap <Leader>dq :Gdiffoff<CR>
 
 
 " airblade/vim-gitgutter {{{1 "
-Plugin 'airblade/vim-gitgutter'
+if !has('win32')
+    Plugin 'airblade/vim-gitgutter'
+endif
 " }}} airblade/vim-gitgutter "
 
 
