@@ -4,10 +4,6 @@
 set history=50
 set nu
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -17,7 +13,6 @@ let mapleader = ","
 let g:mapleader = ","
 
 
-"I like use [ctrl-c]copy and [ctrl-v] paste
 source $VIMRUNTIME/mswin.vim
 
 " Set 7 lines to the cursor - when moving vertically using j/k
@@ -160,25 +155,21 @@ if has("gui_running")
 endif
 
 
-set columns=120
-set lines=35
+"set columns=120
+"set lines=35
 set t_Co=256
 
+if has('gui_running')
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+endif
 
-set encoding=utf-8
-set fileencodings=utf-8,gbk,gb18030,gk2312
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
 try
+    set encoding=utf-8
+    set fileencodings=utf-8,gbk,gb18030,gk2312
     language messages zh_CN.utf-8
 catch
 endtry
-"if has('win32')
-    "set encoding=chinese
-    "set fileencodings=utf-8,gb2312,gbk,gb18030,big5
-    "set fenc=utf-8
-    "set langmenu=zh_CN.GBK
-"endif
 
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black

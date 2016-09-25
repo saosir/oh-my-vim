@@ -110,7 +110,9 @@ let g:ctrlp_custom_ignore = {
 " }}} CtrlP "
 
 "colorschem scame
-colorschem wombat256
+if has('gui_running')
+    colorschem wombat256
+endif
 
 
 
