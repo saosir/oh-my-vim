@@ -209,6 +209,7 @@ let g:pymode_run = 1
 let g:pymode_rope_lookup_project=0
 let g:pymode_rope_regenerate_on_write=0
 let g:pymode_rope_goto_definition_bind = '<F12>'
+let g:pymode_syntax_space_errors=0
 " }}} klen/python-mode "
 
 " honza/vim-snippets {{{1 "
