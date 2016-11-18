@@ -8,6 +8,13 @@ filetype  indent on     " required!
 " }}} bundle "
 
 
+let g:cache_dir = '~/.vim/.cache'
+function! s:get_cache_dir(suffix)
+    return resolve(expand(g:cache_dir . '/' . a:suffix))
+endfunction
+
+
+
 " jistr/vim-nerdtree-tabs {{{ "
 Plugin 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_gui_startup=0
