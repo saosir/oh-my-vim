@@ -76,6 +76,7 @@ set foldcolumn=1
 
 " Use Unix as the standard file type
 set fileformat=unix
+set fileformats=unix,dos
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb

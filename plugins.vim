@@ -188,16 +188,16 @@ map <space>k <Plug>(easymotion-k)
 
 
 " scrooloose/syntastic {{{1 "
-Plugin 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"Plugin 'scrooloose/syntastic'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_loc_list_height = 5
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
 
 " }}} scrooloose/syntastic "
 
@@ -216,26 +216,6 @@ let g:pymode_syntax_space_errors=0
 Plugin 'honza/vim-snippets'
 
 " }}} honza/vim-snippets "
-
-
-
-if has('unix')
-     "Valloric/YouCompleteMe {{{1 "
-"    Plugin 'Valloric/YouCompleteMe'
-    "let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-    "let g:ycm_confirm_extra_conf=0
-    "let g:ycm_key_list_select_completion=[]
-    "let g:ycm_key_list_previous_completion=[]
-    "let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-    "let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-    "let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-    "let g:ycm_complete_in_comments = 1 " Completion in comments
-    "let g:ycm_complete_in_strings = 1 " Completion in string
-    "let g:ycm_enable_diagnostic_signs = 0
-    "let g:ycm_enable_diagnostic_highlighting = 0
-    "let g:clang_library_path = '/usr/lib/llvm-3.8/lib/libclang.so.1'
-    " }}} Valloric/YouCompleteMe "
-endif
 
 
 " davidhalter/jedi-vim {{{1 "
