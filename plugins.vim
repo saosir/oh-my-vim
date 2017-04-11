@@ -14,17 +14,17 @@ function! s:get_cache_dir(suffix)
 endfunction
 
 
+" majutsushi/tagbar {{{1 "
+Plugin 'majutsushi/tagbar'
+map <F6> TagbarToggle
+" }}} majutsushi/tagbar "
+
 
 " jistr/vim-nerdtree-tabs {{{ "
 Plugin 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_gui_startup=0
 " }}} jistr/vim-nerdtree-tabs "
 
-
-" majutsushi/tagbar {{{1 "
-Plugin 'majutsushi/tagbar'
-map <F6> TagbarToggle
-" }}} majutsushi/tagbar "
 
 " scrooloose/nerdtree {{{1 "
 Plugin 'scrooloose/nerdtree'
@@ -68,12 +68,6 @@ map <A-o> :A<cr>
 " }}} vim-scripts/a.vim "
 
 
-" vim-scripts/VOom {{{1 "
-Plugin 'vim-scripts/VOoM'
-nnoremap <silent> <F3> :VoomToggle<CR>
-" }}} vim-scripts/VOom "
-
-
 " tpope/vim-surround {{{1 "
 Plugin 'tpope/vim-surround'
 " }}} tpope/vim-surround "
@@ -109,7 +103,6 @@ let g:ctrlp_custom_ignore = {
 \ }
 " }}} CtrlP "
 
-"colorschem scame
 colorschem wombat256
 
 
@@ -173,8 +166,6 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 " }}} FooSoft/vim-argwrap "
 
 
-
-
 " easymotion/vim-easymotion {{{1 "
 Plugin 'easymotion/vim-easymotion'
 " Turn on case insensitive feature
@@ -186,20 +177,6 @@ map <space>j <Plug>(easymotion-j)
 map <space>k <Plug>(easymotion-k)
 " }}} easymotion/vim-easymotion "
 
-
-" scrooloose/syntastic {{{1 "
-"Plugin 'scrooloose/syntastic'
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 0
-"let g:syntastic_loc_list_height = 5
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-
-" }}} scrooloose/syntastic "
 
 " klen/python-mode {{{1 "
 Plugin 'klen/python-mode'
@@ -214,7 +191,6 @@ let g:pymode_syntax_space_errors=0
 
 " honza/vim-snippets {{{1 "
 Plugin 'honza/vim-snippets'
-
 " }}} honza/vim-snippets "
 
 
@@ -231,12 +207,10 @@ let g:jedi#rename_command = "<S-A-r>"
 
 " }}} davidhalter/jedi-vim "
 
-" bling/vim-airline {{{1 "
 
+" bling/vim-airline {{{1 "
 Plugin 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -267,43 +241,7 @@ Plugin 'terryma/vim-expand-region'
 " tpope/vim-fugitive {{{1 "
 Plugin 'tpope/vim-fugitive'
 
-nnoremap <Leader>gn :Unite output:echo\ system("git\ init")<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>go :Gread<CR>
-nnoremap <Leader>gR :Gremove<CR>
-nnoremap <Leader>gm :Gmove<Space>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gd :Gvdiff<CR>
-"nnoremap <leader>gd :Gvdiff
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gB :Gbrowse<CR>
-nnoremap <Leader>gp :Git! push<CR>
-nnoremap <Leader>gP :Git! pull<CR>
-nnoremap <Leader>gi :Git!<Space>
-nnoremap <Leader>ge :Gedit<CR>
-nnoremap <Leader>gE :Gedit<Space>
-nnoremap <Leader>gl :exe "silent Glog <Bar> Unite -no-quit
-            \ quickfix"<CR>:redraw!<CR>
-nnoremap <Leader>gL :exe "silent Glog -- <Bar> Unite -no-quit
-            \ quickfix"<CR>:redraw!<CR>
-nnoremap <Leader>gt :!tig<CR>:redraw!<CR>
-nnoremap <Leader>gS :exe "silent !shipit"<CR>:redraw!<CR>
-nnoremap <Leader>gg :exe 'silent Ggrep -i '.input("Pattern: ")<Bar>Unite
-            \ quickfix -no-quit<CR>
-nnoremap <Leader>ggm :exe 'silent Glog --grep='.input("Pattern: ").' <Bar>
-            \Unite -no-quit quickfix'<CR>
-nnoremap <Leader>ggt :exe 'silent Glog -S='.input("Pattern: ").' <Bar>
-            \Unite -no-quit quickfix'<CR>
-nnoremap <Leader>ggc :silent! Ggrep -i<Space>
-" for the diffmode
-noremap <Leader>du :diffupdate<CR>
-if !exists(":Gdiffoff")
-    command Gdiffoff diffoff | q | Gedit
-endif
-noremap <Leader>dq :Gdiffoff<CR>
 " }}} tpope/vim-fugitive "
-
 
 
 " airblade/vim-gitgutter {{{1 "
@@ -316,7 +254,6 @@ endif
 " gregsexton/gitv {{{1 "
 Plugin 'gregsexton/gitv'
 " }}} gregsexton/gitv "
-
 
 
 " mzlogin/vim-markdown-toc{{{1 "
