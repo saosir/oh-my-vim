@@ -263,6 +263,6 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-
+Plugin 'vim-scripts/DrawIt.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
