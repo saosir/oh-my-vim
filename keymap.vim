@@ -34,9 +34,6 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 
-" bug:conflit with window move
-"nmap <leader>w :w!<cr>
-
 "Fast reloading of the .vimrc
 map <silent> <leader>ss :source ~/.vim/basic.vim<cr>
 map <silent> <leader>ee :e ~/.vim/basic.vim<cr>
@@ -67,14 +64,10 @@ endif
 imap <C-S-Enter> <Esc>O
 " insert new next line under cursor
 imap <C-Enter> <Esc>o
-" delete a wor
-imap <C-Delete> <Esc>lcw
 " delete a back word
 imap <C-backspace> <Esc>caw
 " delete a line under cursor
 imap <C-S-backspace> <Esc>S
-" delete chars after cursor
-imap <C-S-k> <Esc>ddi
 " delete a char
 imap <C-d> <delete>
 
@@ -174,7 +167,6 @@ autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
 
 " clang-format
-
 function! FormatFile()
   let l:lines="all"
   pyf ~/.vim/clang-format.py

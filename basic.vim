@@ -1,5 +1,3 @@
-
-
 " Sets how many lines of history VIM has to remember
 set history=50
 set nu
@@ -32,8 +30,6 @@ else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
-"Always show current position
-set ruler
 
 " Height of the command bar
 "set cmdheight=1
@@ -77,9 +73,8 @@ set foldcolumn=1
 " Use Unix as the standard file type
 set fileformat=unix
 set fileformats=unix,dos
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 
@@ -90,16 +85,12 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Linebreak on 500 characters
-set lbr
-set tw=73
 " Use spaces instead of tabs
 set expandtab
 %retab!
 
 set ai "Auto indent
 set si "Smart indent
-"set wrap "Wrap lines
 
 
 
@@ -117,11 +108,7 @@ autocmd BufReadPost *
      \ endif
 " Remember info about open buffers on close
 set viminfo^=%
-" Always show the status line
 set laststatus=2
-
-" Format the status line
-
 set completeopt=menuone,menu,longest
 set nocp
 
@@ -156,8 +143,6 @@ if has("gui_running")
 endif
 
 
-"set columns=120
-"set lines=35
 set t_Co=256
 
 if has('gui_running')
@@ -175,5 +160,5 @@ endtry
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
 
-
+colorschem wombat256
 
