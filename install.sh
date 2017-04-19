@@ -13,6 +13,6 @@ endtry
 
 if [[ $1 == 'minimal' ]]; then
     echo 'source ~/.vim/minimal.vim' > ~/.vimrc
-elif [[ $1 == 'minimal' ]]
+else
     echo 'source ~/.vim/plugins.vim' > ~/.vimrc
 fi
