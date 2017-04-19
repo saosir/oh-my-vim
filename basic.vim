@@ -76,6 +76,7 @@ set fileformats=unix,dos
 set nobackup
 set nowritebackup
 set noswapfile
+set selection=inclusive
 
 
 " Be smart when using tabs ;)

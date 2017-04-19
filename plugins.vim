@@ -28,7 +28,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
-
+Plugin 'hotoo/pangu.vim'
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 
 Plugin 'majutsushi/tagbar'
@@ -46,8 +47,6 @@ let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.git','\.hg', '.*.pyc', '.*.obj']
 let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 nnoremap <F2> :NERDTreeToggle<CR>
-
-
 
 
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -96,7 +95,9 @@ function! s:align()
   endif
 endfunction
 
-
+Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_disabled = 1
 
 Plugin 'mhinz/vim-startify'
 let g:startify_session_dir = s:get_cache_dir('sessions')
