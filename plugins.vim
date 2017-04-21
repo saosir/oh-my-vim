@@ -19,6 +19,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'gregsexton/gitv'
@@ -63,13 +65,6 @@ map <c-d> :Dox<cr>
 let g:syntax_extra_cpp='doxygen'
 au BufNewFile,BufRead *.doxygen setfiletype doxygen
 au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
-
-
-Plugin 'vim-scripts/a.vim'
-map <leader>as :AS<cr>
-map <leader>av :AV<cr>
-map <A-o> :A<cr>
-
 
 Plugin 'kien/ctrlp.vim'
 nmap \m :CtrlPMRUFiles<cr>
@@ -168,9 +163,6 @@ nmap <S-TAB> :bp<CR>
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme="solarized"
 
-if !has('win32')
-    Plugin 'airblade/vim-gitgutter'
-endif
 
 call vundle#end()            " required
 filetype plugin indent on    " required
