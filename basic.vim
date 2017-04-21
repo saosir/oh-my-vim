@@ -77,6 +77,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set selection=inclusive
+set conceallevel=2
 
 
 " Be smart when using tabs ;)
@@ -112,6 +113,9 @@ set viminfo^=%
 set laststatus=2
 set completeopt=menuone,menu,longest
 set nocp
+set guicursor=a:blinkon0
+set cursorline
+
 
 
 
@@ -161,5 +165,4 @@ endtry
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
 
-colorschem wombat256
 
