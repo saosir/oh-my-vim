@@ -31,9 +31,15 @@ Plugin 'vim-scripts/DrawIt.git'
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
-
 Plugin 'majutsushi/tagbar'
-map <F6> TagbarToggle
+map <F3> Tagbar
+
+Plugin 'altercation/vim-colors-solarized'
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+endif
+
 
 Plugin 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_gui_startup=0

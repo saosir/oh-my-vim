@@ -77,6 +77,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set selection=inclusive
+set conceallevel=2
 
 
 " Be smart when using tabs ;)
@@ -161,5 +162,4 @@ endtry
 highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
 
-colorschem wombat256
 
