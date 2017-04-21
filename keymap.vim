@@ -35,11 +35,11 @@ map <C-l> <C-W>l
 
 
 "Fast reloading of the .vimrc
-map <silent> <leader>ss :source ~/.vim/basic.vim<cr>
+map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vim/basic.vim<cr>
 map <silent> <leader>ek :e ~/.vim/keymap.vim<cr>
 map <silent> <leader>ep :e ~/.vim/plugins.vim<cr>
-map <silent> <leader>eu :e ~/.vim/user.vim<cr>
+map <silent> <leader>eu :e ~/.vim/my_config.vim<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>

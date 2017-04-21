@@ -12,7 +12,7 @@ endtry
 ' > ~/.vimrc
 
 if [[ $1 == 'minimal' ]]; then
-    echo 'source ~/.vim/minimal.vim' > ~/.vimrc
+    echo 'source ~/.vim/minimal.vim' >> ~/.vimrc
 else
-    echo 'source ~/.vim/plugins.vim' > ~/.vimrc
+    echo 'source ~/.vim/plugins.vim' >> ~/.vimrc
 fi
