@@ -113,6 +113,9 @@ set viminfo^=%
 set laststatus=2
 set completeopt=menuone,menu,longest
 set nocp
+set guicursor=a:blinkon0
+set cursorline
+
 
 
 

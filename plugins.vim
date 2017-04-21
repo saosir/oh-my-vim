@@ -32,13 +32,15 @@ Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 Plugin 'majutsushi/tagbar'
-map <F3> Tagbar
+map <F3> :Tagbar<cr>
 
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
     set background=dark
     colorscheme solarized
 endif
+nnoremap cob :set background=<C-R>=&background == 'dark' ? 'light' : 'dark'<CR><CR>
+nmap <F5> cob
 
 
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -164,7 +166,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <TAB> :bn<CR>
 nmap <S-TAB> :bp<CR>
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme="wombat"
+let g:airline_theme="solarized"
 
 if !has('win32')
     Plugin 'airblade/vim-gitgutter'
