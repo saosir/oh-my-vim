@@ -133,12 +133,12 @@ if has("gui_running")
     set guioptions-=b  " remove bottom scroll bar
     if has("win32")
         try
-            set guifont=DejaVu_Sans_Mono_for_Powerline:h10, Source_Code_Pro:h12, DejaVu_Sans_Mono:h12
+            set guifont=DejaVu_Sans_Mono_for_Powerline:h10, Source_Code_Pro:h10, DejaVu_Sans_Mono:h10
         catch
         endtry
     elseif has("unix")
         try
-            set guifont=Source\ Code\ Pro\ 12, Monospace\ 12
+            set guifont=Source\ Code\ Pro\ 10, Monospace\ 10
         catch
         endtry
     endif

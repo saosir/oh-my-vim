@@ -35,7 +35,11 @@ map <C-l> <C-W>l
 
 
 "Fast reloading of the .vimrc
-map <silent> <leader>ss :source ~/.vimrc<cr>
+if has('win32')
+    map <silent> <leader>ss :source ~/_vimrc<cr>
+else
+    map <silent> <leader>ss :source ~/.vimrc<cr>
+endif
 map <silent> <leader>ee :e ~/.vim/basic.vim<cr>
 map <silent> <leader>ek :e ~/.vim/keymap.vim<cr>
 map <silent> <leader>ep :e ~/.vim/plugins.vim<cr>
