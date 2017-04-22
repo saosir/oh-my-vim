@@ -13,7 +13,6 @@ function! s:get_cache_dir(suffix)
     return resolve(expand(g:cache_dir . '/' . a:suffix))
 endfunction
 
-
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/AutoComplPop'
@@ -30,11 +29,12 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
+Plugin 'junegunn/goyo.vim'
+Plugin 'kshenoy/vim-signature'
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 Plugin 'majutsushi/tagbar'
-map <F3> :Tagbar<cr>
 
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
@@ -42,7 +42,6 @@ if has('gui_running')
     colorscheme solarized
 endif
 nnoremap cob :set background=<C-R>=&background == 'dark' ? 'light' : 'dark'<CR><CR>
-nmap <F5> cob
 
 
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -56,7 +55,6 @@ let NERDTreeChDirMode=0
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.git','\.hg', '.*.pyc', '.*.obj']
 let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
-nnoremap <F2> :NERDTreeToggle<CR>
 
 
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -106,8 +104,6 @@ Plugin 'mhinz/vim-startify'
 let g:startify_session_dir = s:get_cache_dir('sessions')
 let g:startify_change_to_vcs_root = 1
 let g:startify_show_sessions = 1
-nnoremap <F1> :Startify<cr>
-
 
 if has('gui_running')
     Plugin 'nathanaelkane/vim-indent-guides'
@@ -166,3 +162,12 @@ let g:airline_theme="solarized"
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+nnoremap <F1> :Startify<cr>
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :Tagbar<cr>
+nnoremap <F4> :Goyo<cr>
+nmap <F5> cob " background color switch dark/light
+
+
