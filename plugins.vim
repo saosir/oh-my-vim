@@ -121,7 +121,6 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 
 Plugin 'easymotion/vim-easymotion'
-" Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-w)
 map <space><space> <Plug>(easymotion-s)
