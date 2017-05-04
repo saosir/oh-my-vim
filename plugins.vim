@@ -27,6 +27,7 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
 Plugin 'junegunn/goyo.vim'
@@ -123,6 +124,7 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-w)
+map <c+;> <Plug>(easymotion-bd-w)
 map <space><space> <Plug>(easymotion-s)
 map <space>j <Plug>(easymotion-j)
 map <space>k <Plug>(easymotion-k)
@@ -130,13 +132,7 @@ map <space>k <Plug>(easymotion-k)
 
 
 Plugin 'davidhalter/jedi-vim'
-let g:jedi#show_call_signatures = "1"
-let g:jedi#popup_select_first = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<leader>p"
 let g:jedi#rename_command = "<S-A-r>"
 
 

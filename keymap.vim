@@ -11,7 +11,7 @@ noremap <leader>h :set hlsearch! hlsearch?<CR>
 nnoremap <space>w :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 
-"Another approach is to use the following to map the Enter key (<CR>) 
+"Another approach is to use the following to map the Enter key (<CR>)
 "so that pressing Enter toggles highlighting for the current word on and off
 let g:highlighting = 0
 function! Highlighting()
@@ -64,33 +64,13 @@ if has("mac") || has("macunix")
 endif
 
 
-"  insert new prev line under cursor
-imap <C-S-Enter> <Esc>O
-" insert new next line under cursor
-imap <C-Enter> <Esc>o
-" delete a back word
-imap <C-backspace> <Esc>caw
-" delete a line under cursor
-imap <C-S-backspace> <Esc>S
-" delete a char
-imap <C-d> <delete>
-
  " smash escape
 inoremap jk <esc>
 inoremap kj <esc>
 
-
-" select a work
-imap <c-w> <Esc>viw
-
-" edit move cursor
 imap <C-q> <Esc>
-imap <C-a> <Esc>I
-imap <C-e> <Esc>A
 imap <C-f> <Esc>la
 imap <C-b> <Esc>i
-imap <C-j> <Esc>ja
-imap <C-k> <Esc>ka
 
 
 
@@ -144,7 +124,7 @@ map <leader>c :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
-" ASCII boxes tool, 
+" ASCII boxes tool,
 vmap ,mc !boxes -d c-cmt<CR>
 nmap ,mc !!boxes -d c-cmt<CR>
 vmap ,xc !boxes -d c-cmt -r<CR>
@@ -170,16 +150,6 @@ autocmd BufEnter .vimrc*,.exrc vmap ,mc !boxes -d vim-cmt<CR>
 autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
 
-" clang-format
-function! FormatFile()
-  let l:lines="all"
-  pyf ~/.vim/clang-format.py
-endfunction
-
-"map <c-s-f> :call FormatFile()<cr>
-map <leader>f :pyf ~/.vim/clang-format.py<cr>
-
-
 " Remove White Space
 function! s:FixWhitespace(line1,line2)
     let l:save_cursor = getpos(".")
@@ -189,3 +159,5 @@ endfunction
 
 " Run :FixWhitespace to remove end of line white space
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
+autocmd BufWritePre * FixWhitespace
+
