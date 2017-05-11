@@ -11,8 +11,6 @@ let mapleader = ","
 let g:mapleader = ","
 
 
-source $VIMRUNTIME/mswin.vim
-
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -124,6 +122,9 @@ syntax enable
 
 " Set extra options when running in GUI mode
 if has("gui_running")
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/mswin.vim
+    source $VIMRUNTIME/menu.vim
     set guioptions-=e
     set guioptions-=m
     set guioptions-=T  " remove toolbar
@@ -150,10 +151,6 @@ endif
 
 set t_Co=256
 
-if has('gui_running')
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-endif
 
 try
     set encoding=utf-8

@@ -32,14 +32,19 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kshenoy/vim-signature'
+Plugin 'majutsushi/tagbar'
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
-Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-repeat'
+"silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
+
+
 
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
-    set background=dark
+    "set background=dark
     colorscheme solarized
 endif
 nnoremap cob :set background=<C-R>=&background == 'dark' ? 'light' : 'dark'<CR><CR>
@@ -51,7 +56,6 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 
 Plugin 'scrooloose/nerdtree'
 let NERDTreeQuitOnOpen=0
-let NERDTreeShowLineNumbers=1
 let NERDTreeChDirMode=0
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.git','\.hg', '.*.pyc', '.*.obj']

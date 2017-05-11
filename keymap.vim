@@ -37,6 +37,10 @@ map <C-l> <C-W>l
 "Fast reloading of the .vimrc
 if has('win32')
     map <silent> <leader>ss :source ~/_vimrc<cr>
+    " Prevent CTRL-F to abort the selection (in visual mode)
+    " This is caused by $VIM/_vimrc ':behave mswin' which sets 'keymodel' to
+    " include 'stopsel' which means that non-shifted special keys stop selection.
+    set keymodel=startsel
 else
     map <silent> <leader>ss :source ~/.vimrc<cr>
 endif
