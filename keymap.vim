@@ -4,13 +4,6 @@ map j gj
 map k gk
 
 
-"Toggle highlighting on/off, and show current value.
-noremap <leader>h :set hlsearch! hlsearch?<CR>
-
-"Highlight all occurrences of the current word
-nnoremap <space>w :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-
-
 "Another approach is to use the following to map the Enter key (<CR>)
 "so that pressing Enter toggles highlighting for the current word on and off
 let g:highlighting = 0

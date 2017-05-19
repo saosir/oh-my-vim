@@ -44,7 +44,7 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
-    "set background=dark
+    set background=dark
     colorscheme solarized
 endif
 nnoremap cob :set background=<C-R>=&background == 'dark' ? 'light' : 'dark'<CR><CR>
@@ -127,12 +127,9 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-map <leader>w <Plug>(easymotion-bd-w)
-map <c+;> <Plug>(easymotion-bd-w)
+map <space> <Plug>(easymotion-prefix)
 map <space><space> <Plug>(easymotion-s)
-map <space>j <Plug>(easymotion-j)
-map <space>k <Plug>(easymotion-k)
-
+map <space>s <Plug>(easymotion-s)
 
 
 Plugin 'davidhalter/jedi-vim'
