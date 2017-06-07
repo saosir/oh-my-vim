@@ -9,10 +9,7 @@ try
     source ~/.vim/my_config.vim
 catch
 endtry
+source ~/.vim/plugins.vim'
 ' > ~/.vimrc
 
-if [[ $1 == 'minimal' ]]; then
-    echo 'source ~/.vim/minimal.vim' >> ~/.vimrc
-else
-    echo 'source ~/.vim/plugins.vim' >> ~/.vimrc
-fi
+

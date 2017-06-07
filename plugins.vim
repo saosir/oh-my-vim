@@ -132,9 +132,9 @@ map <space><space> <Plug>(easymotion-s)
 map <space>s <Plug>(easymotion-s)
 
 
-Plugin 'davidhalter/jedi-vim'
-let g:jedi#documentation_command = "K"
-let g:jedi#rename_command = "<S-A-r>"
+"Plugin 'davidhalter/jedi-vim'
+"let g:jedi#documentation_command = "K"
+"let g:jedi#rename_command = "<S-A-r>"
 
 
 Plugin 'vim-airline/vim-airline'
