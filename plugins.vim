@@ -30,7 +30,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
-Plugin 'junegunn/goyo.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
 Plugin 'hotoo/pangu.vim'
@@ -163,7 +162,6 @@ filetype plugin indent on    " required
 nnoremap <F1> :Startify<cr>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :Tagbar<cr>
-nnoremap <F4> :Goyo<cr>
 nmap <F5> cob " background color switch dark/light
 
 

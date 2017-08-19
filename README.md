@@ -6,3 +6,7 @@
     chmode +x install.sh
     ./install.sh
 
+run vim and execute this command:
+
+    :PluginInstall
+

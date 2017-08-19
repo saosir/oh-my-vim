@@ -70,7 +70,6 @@ set foldcolumn=1
 
 " Use Unix as the standard file type
 set fileformat=unix
-set fileformats=unix,dos
 set nobackup
 set nowritebackup
 set noswapfile
