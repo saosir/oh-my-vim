@@ -19,14 +19,6 @@ endfunction
 nnoremap <silent> <expr> <CR> Highlighting()
 
 
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-
 "Fast reloading of the .vimrc
 if has('win32')
     map <silent> <leader>ss :source ~/_vimrc<cr>
@@ -40,12 +32,10 @@ endif
 map <silent> <leader>ee :e ~/.vim/basic.vim<cr>
 map <silent> <leader>ek :e ~/.vim/keymap.vim<cr>
 map <silent> <leader>ep :e ~/.vim/plugins.vim<cr>
-map <silent> <leader>eu :e ~/.vim/my_config.vim<cr>
+map <silent> <leader>em :e ~/.vim/my_config.vim<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z

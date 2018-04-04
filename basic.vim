@@ -35,9 +35,6 @@ endif
 " A buffer becomes hidden when it is abandoned
 set hid
 
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
@@ -73,7 +70,6 @@ set fileformat=unix
 set nobackup
 set nowritebackup
 set noswapfile
-set selection=inclusive
 set conceallevel=2
 
 
@@ -117,13 +113,11 @@ set cursorline
 
 
 " Enable syntax highlighting
+
 syntax enable
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/mswin.vim
-    source $VIMRUNTIME/menu.vim
     set guioptions-=e
     set guioptions-=m
     set guioptions-=T  " remove toolbar
@@ -132,6 +126,9 @@ if has("gui_running")
     set guioptions-=L  " remove left-hand scroll bar even if there is a vertical split
     set guioptions-=b  " remove bottom scroll bar
     if has("win32")
+        source $VIMRUNTIME/delmenu.vim
+        source $VIMRUNTIME/mswin.vim
+        source $VIMRUNTIME/menu.vim
         try
             set guifont=DejaVu_Sans_Mono_for_Powerline:h10, Source_Code_Pro:h10, DejaVu_Sans_Mono:h10
         catch
@@ -147,9 +144,9 @@ if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
 
-
-set t_Co=256
-
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+set selection=inclusive
 
 try
     set encoding=utf-8

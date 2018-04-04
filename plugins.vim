@@ -14,7 +14,7 @@ function! s:get_cache_dir(suffix)
 endfunction
 
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
@@ -137,8 +137,9 @@ map <space>s <Plug>(easymotion-s)
 
 
 Plugin 'vim-airline/vim-airline'
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
