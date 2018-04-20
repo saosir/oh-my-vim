@@ -14,6 +14,7 @@ function! s:get_cache_dir(suffix)
 endfunction
 
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'tpope/vim-surround'
