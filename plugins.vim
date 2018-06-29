@@ -24,20 +24,16 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'gregsexton/gitv'
-Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
 Plugin 'kshenoy/vim-signature'
-Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-repeat'
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
-Plugin 'tpope/vim-repeat'
-"silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 
 
@@ -132,13 +128,8 @@ map <space><space> <Plug>(easymotion-s)
 map <space>s <Plug>(easymotion-s)
 
 
-"Plugin 'davidhalter/jedi-vim'
-"let g:jedi#documentation_command = "K"
-"let g:jedi#rename_command = "<S-A-r>"
-
-
 Plugin 'vim-airline/vim-airline'
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
@@ -163,7 +154,6 @@ filetype plugin indent on    " required
 
 nnoremap <F1> :Startify<cr>
 nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F3> :Tagbar<cr>
-nmap <F5> cob " background color switch dark/light
+nmap <F3> cob " background color switch dark/light
 
 
