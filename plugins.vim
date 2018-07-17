@@ -40,10 +40,11 @@ autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing(
 
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
-    set background=dark
     colorscheme solarized
 endif
+set background=dark
 nnoremap cob :set background=<C-R>=&background == 'dark' ? 'light' : 'dark'<CR><CR>
+nmap <F3> cob " background color switch dark/light
 
 
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -154,6 +155,5 @@ filetype plugin indent on    " required
 
 nnoremap <F1> :Startify<cr>
 nnoremap <F2> :NERDTreeToggle<CR>
-nmap <F3> cob " background color switch dark/light
 
 
