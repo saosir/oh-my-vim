@@ -148,3 +148,4 @@ endfunction
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 autocmd BufWritePre * FixWhitespace
 
+set pastetoggle=<F5>
