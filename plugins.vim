@@ -124,11 +124,25 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-map <leader>s <Plug>(easymotion-s)
+
+map <leader><leader>s <Plug>(easymotion-overwin-f)
+
+" Move to line
+
 map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Search
 map  <leader><leader>/ <Plug>(easymotion-sn)
 omap <leader><leader>/ <Plug>(easymotion-tn)
-nmap <leader>L <Plug>(easymotion-overwin-line)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 
 Plugin 'vim-airline/vim-airline'
