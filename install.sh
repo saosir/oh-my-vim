@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 cd $(dirname $0)
-git submodule update --init --recursive
+if [[ -d .git ]]; then
+    git submodule update --init --recursive
+fi
 echo "
 set runtimepath+=~/.vim
 source ~/.vim/basic.vim
