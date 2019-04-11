@@ -28,6 +28,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-repeat'
+Plugin 'Yggdroot/indentLine.git'
 
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
@@ -102,16 +103,6 @@ let g:startify_session_dir = s:get_cache_dir('sessions')
 let g:startify_change_to_vcs_root = 1
 let g:startify_show_sessions = 1
 
-if has('gui_running')
-    Plugin 'nathanaelkane/vim-indent-guides'
-    let g:indent_guides_auto_colors = 1
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_enable_on_vim_startup = 1
-    let g:indent_guides_start_level=1
-    let g:indent_guides_guide_size=1
-    let g:indent_guides_color_change_percent=3
-endif
-
 
 Plugin 'FooSoft/vim-argwrap'
 nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
@@ -120,7 +111,7 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 
-map <leader><leader>s <Plug>(easymotion-overwin-f)
+map <leader>s <Plug>(easymotion-overwin-f)
 
 " Move to line
 
@@ -134,10 +125,6 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 " Search
 map  <leader><leader>/ <Plug>(easymotion-sn)
 omap <leader><leader>/ <Plug>(easymotion-tn)
-
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 
 Plugin 'vim-airline/vim-airline'
