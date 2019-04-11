@@ -1,12 +1,9 @@
-" bundle {{{1 "
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-filetype  indent on     " required!
-" }}} bundle "
 
+filetype  indent on     " required!
 
 let g:cache_dir = '~/.vim/.cache'
 function! s:get_cache_dir(suffix)
@@ -31,11 +28,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-repeat'
+
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
-
-
-
 
 
 Plugin 'altercation/vim-colors-solarized'
@@ -164,9 +159,15 @@ nmap <S-TAB> :bp<CR>
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme="solarized"
 
+Plugin 'ntpeters/vim-better-whitespace'
+let g:better_whitespace_enabled=0
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+
+
+call vundle#end()
+filetype plugin indent on
 
 
 nnoremap <F1> :Startify<cr>
