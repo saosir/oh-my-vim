@@ -26,6 +26,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DrawIt.git'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-repeat'
+Plugin 'michaeljsmith/vim-indent-object'
 
 Plugin 'hotoo/pangu.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
@@ -101,13 +102,17 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_show_sessions = 1
 
 
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 if has('gui_running')
-    Plugin 'nathanaelkane/vim-indent-guides'
     let g:indent_guides_auto_colors = 1
     let g:indent_guides_start_level=1
     let g:indent_guides_guide_size=1
     let g:indent_guides_color_change_percent=3
     let g:indent_guides_enable_on_vim_startup = 1
+    let g:indentLine_enabled=0
+else
+    let g:indentLine_enabled=1
 endif
 
 Plugin 'FooSoft/vim-argwrap'
@@ -132,6 +137,11 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  <leader><leader>/ <Plug>(easymotion-sn)
 omap <leader><leader>/ <Plug>(easymotion-tn)
 
+Plugin 'justinmk/vim-sneak'
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 Plugin 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
