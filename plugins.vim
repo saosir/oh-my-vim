@@ -121,23 +121,16 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-
 map <leader>s <Plug>(easymotion-overwin-f)
-
 " Move to line
-
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
 " Search
-map  <leader><leader>/ <Plug>(easymotion-sn)
-omap <leader><leader>/ <Plug>(easymotion-tn)
+map  <leader>/ <Plug>(easymotion-sn)
+omap <leader>/ <Plug>(easymotion-tn)
 
 Plugin 'justinmk/vim-sneak'
+let g:sneak#label = 1
 map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
