@@ -43,8 +43,6 @@ set smartcase
 " Makes search act like search in modern browsers
 set incsearch
 
-" hlsearch
-set hlsearch
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
@@ -71,23 +69,14 @@ set nobackup
 set nowritebackup
 set noswapfile
 set conceallevel=2
-
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-
-" Use spaces instead of tabs
+set nohlsearch
+set tabstop=2
+set shiftwidth=2
 set expandtab
-%retab!
-
-set ai "Auto indent
-set si "Smart indent
-
-
+set softtabstop=0
+set autoindent
+set smarttab
+set smartindent
 
 " Specify the behavior when switching between buffers
 try
@@ -107,12 +96,6 @@ set laststatus=2
 set completeopt=menuone,menu,longest
 set nocp
 set guicursor=a:blinkon0
-
-
-
-
-" Enable syntax highlighting
-
 syntax enable
 
 " Set extra options when running in GUI mode

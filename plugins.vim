@@ -54,11 +54,10 @@ let NERDTreeBookmarksFile= s:get_cache_dir('NERDTreeBookmarks')
 
 
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-let g:DoxygenToolkit_authorName='liangsijian'
-map <c-d> :Dox<cr>
 let g:syntax_extra_cpp='doxygen'
 au BufNewFile,BufRead *.doxygen setfiletype doxygen
 au Syntax {cpp,c,idl} runtime syntax/doxygen.vim
+nmap <leader>d :Dox<cr>
 
 Plugin 'kien/ctrlp.vim'
 nmap \m :CtrlPMRUFiles<cr>
@@ -102,9 +101,9 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_show_sessions = 1
 
 
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
 if has('gui_running')
+    Plugin 'nathanaelkane/vim-indent-guides'
     let g:indent_guides_auto_colors = 1
     let g:indent_guides_start_level=1
     let g:indent_guides_guide_size=1
@@ -121,16 +120,20 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-map <leader>s <Plug>(easymotion-overwin-f)
 " Move to line
-map <leader>j <Plug>(easymotion-j)
+nmap <leader>s <Plug>(easymotion-overwin-f2)
 map <leader>k <Plug>(easymotion-k)
 " Search
 map  <leader>/ <Plug>(easymotion-sn)
 omap <leader>/ <Plug>(easymotion-tn)
+map  <space> <Plug>(easymotion-sn)
+omap <space> <Plug>(easymotion-tn)
+
 
 Plugin 'justinmk/vim-sneak'
 let g:sneak#label = 1
+map <leader><leader>s <Plug>Sneak_s
+map <leader><leader>S <Plug>Sneak_S
 map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
@@ -141,7 +144,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>1 <Plug>AirlineSelectTab1HG
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
@@ -168,5 +171,5 @@ filetype plugin indent on
 
 nnoremap <F1> :Startify<cr>
 nnoremap <F2> :NERDTreeToggle<CR>
-
+nnoremap <F4> :set hlsearch! hlsearch?<CR>
 
