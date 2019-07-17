@@ -68,10 +68,10 @@ set fileformat=unix
 set nobackup
 set nowritebackup
 set noswapfile
-set conceallevel=2
+set conceallevel=4
 set nohlsearch
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set softtabstop=0
 set autoindent
