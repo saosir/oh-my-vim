@@ -120,24 +120,10 @@ nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
 
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-" Move to line
-nmap <leader>s <Plug>(easymotion-overwin-f2)
-map <leader>k <Plug>(easymotion-k)
-" Search
-map  <leader>/ <Plug>(easymotion-sn)
-omap <leader>/ <Plug>(easymotion-tn)
+nmap <leader>s <Plug>(easymotion-s)
+nmap <leader><leader>s <Plug>(easymotion-overwin-f2)
 map  <space> <Plug>(easymotion-sn)
 omap <space> <Plug>(easymotion-tn)
-
-
-Plugin 'justinmk/vim-sneak'
-let g:sneak#label = 1
-map <leader><leader>s <Plug>Sneak_s
-map <leader><leader>S <Plug>Sneak_S
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
 
 Plugin 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
