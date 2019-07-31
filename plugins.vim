@@ -38,7 +38,7 @@ if has('gui_running')
 endif
 set background=dark
 nnoremap cob :set background=<C-R>=&background == 'dark' ? 'light' : 'dark'<CR><CR>
-nmap <F3> cob " background color switch dark/light
+nmap <F3> cob
 
 
 Plugin 'jistr/vim-nerdtree-tabs'
